@@ -1,0 +1,7 @@
+@import "./r-button.theme.scss";
+
+:host {
+  @include r-button-theme();
+  border: none;
+  outline: none;
+}

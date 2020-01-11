@@ -1,0 +1,11 @@
+@function r-get-statuses() {
+  @return 'primary', 'info', 'success', 'warning', 'danger';
+}
+
+@function r-get-sizes() {
+  @return 'small', 'medium', 'large';
+}
+
+@function r-get-shapes() {
+  @return 'rectangle', 'rounded-pill', 'rounded';
+}
