@@ -1,5 +1,6 @@
 {
   "name": "r-components",
+  "author": "Nemanja Subotin",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -9,7 +10,26 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/subotin94/r-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/subotin94/r-components/issues"
+  },
+  "homepage": "https://github.com/subotin94/r-components",
+  "keywords": [
+    "angular",
+    "components",
+    "theme",
+    "angular theme",
+    "ui",
+    "ui components",
+    "ui library",
+    "ui framework"
+  ],
+  "license": "MIT",
+  "private": false,
   "dependencies": {
     "@angular/animations": "~8.2.14",
     "@angular/common": "~8.2.14",
@@ -19,6 +39,7 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "@subbre/r-components": "0.0.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
