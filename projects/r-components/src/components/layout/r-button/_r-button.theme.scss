@@ -1,6 +1,6 @@
-@import "../../styles/variants.scss";
-@import "../../styles/r-theme.scss";
-@import "../../styles/mixins.scss";
+@import "../../../styles/variants.scss";
+@import "../../../styles/r-theme.scss";
+@import "../../../styles/mixins.scss";
 
 @mixin r-button-theme {
   &[r-button]:focus {

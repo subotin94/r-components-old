@@ -1,4 +1,5 @@
 @import "./variables.scss";
+@import "./themes/default.scss";
 
 $r-theme-map: ();
 
@@ -25,6 +26,10 @@ $button-map: (
   button-large-line-height: 20px,
   button-large-padding: 13px 18px,
 
+  button-filled-disabled-border-color: transparent,
+  button-filled-disabled-background-color: $default-disabled-color-1,
+  button-filled-disabled-color: $default-disabled-color-2,
+
   button-filled-primary-background-color: $primary,
   button-filled-primary-hover-background-color: $primary-light,
   button-filled-primary-border-color: $primary,
@@ -43,9 +48,6 @@ $button-map: (
   button-filled-danger-color: $white,
   button-filled-danger-active-background-color: $danger-dark,
   button-filled-danger-active-border-color: $danger-dark,
-  button-filled-danger-disabled-border-color: $danger,
-  button-filled-danger-disabled-background-color: $danger,
-  button-filled-danger-disabled-color: $danger,
 
   button-filled-warning-background-color: $warning,
   button-filled-warning-hover-background-color: $warning-light,
@@ -54,9 +56,6 @@ $button-map: (
   button-filled-warning-color: $white,
   button-filled-warning-active-background-color: $warning-dark,
   button-filled-warning-active-border-color: $warning-dark,
-  button-filled-warning-disabled-border-color: $danger,
-  button-filled-warning-disabled-background-color: $danger,
-  button-filled-warning-disabled-color: $danger,
 
   button-filled-info-background-color: $info,
   button-filled-info-hover-background-color: $info-light,
@@ -65,9 +64,6 @@ $button-map: (
   button-filled-info-color: $white,
   button-filled-info-active-background-color: $info-dark,
   button-filled-info-active-border-color: $info-dark,
-  button-filled-info-disabled-border-color: $danger,
-  button-filled-info-disabled-background-color: $danger,
-  button-filled-info-disabled-color: $danger,
 
   button-filled-success-background-color: $success,
   button-filled-success-hover-background-color: $success-light,
@@ -76,9 +72,6 @@ $button-map: (
   button-filled-success-color: $white,
   button-filled-success-active-background-color: $success-dark,
   button-filled-success-active-border-color: $success-dark,
-  button-filled-success-disabled-border-color: $danger,
-  button-filled-success-disabled-background-color: $danger,
-  button-filled-success-disabled-color: $danger,
 );
 
 @each $map in $global-map, $button-map {

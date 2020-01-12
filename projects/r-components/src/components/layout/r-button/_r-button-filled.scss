@@ -1,6 +1,6 @@
-@import "../../styles/variants.scss";
-@import "../../styles/r-theme.scss";
-@import "../../styles/mixins.scss";
+@import "../../../styles/variants.scss";
+@import "../../../styles/r-theme.scss";
+@import "../../../styles/mixins.scss";
 
 @mixin button-filled() {
   &[r-button].appearance-filled {
@@ -32,14 +32,16 @@
           );
           border-color: r-theme(button-filled-#{$status}-active-border-color);
         }
-
-        &[disabled] {
-          background-color: r-theme(
-            button-filled-#{$status}-disabled-background-color
-          );
-          border-color: r-theme(button-filled-#{$status}-disabled-border-color);
-          color: r-theme(button-filled-#{$status}-disabled-color);
-        }
+      }
+    }
+    &:disabled {
+      background-color: r-theme(button-filled-disabled-background-color);
+      border-color: r-theme(button-filled-disabled-border-color);
+      color: r-theme(button-filled-disabled-color);
+      cursor: default;
+      &:hover {
+        background-color: r-theme(button-filled-disabled-background-color);
+        border-color: r-theme(button-filled-disabled-border-color);
       }
     }
   }
