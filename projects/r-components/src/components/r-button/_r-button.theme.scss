@@ -1,0 +1,17 @@
+@import "../../styles/variants.scss";
+@import "../../styles/r-theme.scss";
+
+@mixin r-button-theme {
+  @each $size in r-get-sizes() {
+    &.size-#{$size} {
+      font-size: r-theme(button-#{$size}-font-size);
+      line-height: r-theme(button-#{$size}-line-height);
+
+      r-icon {
+        font-size: r-theme(button-#{$size}-font-size);
+        height: r-theme(button-#{$size}-line-height);
+        width: r-theme(button-#{$size}-line-height);
+      }
+    }
+  }
+}

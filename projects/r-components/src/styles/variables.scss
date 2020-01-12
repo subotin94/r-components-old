@@ -1,0 +1,21 @@
+// Font
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+$font: "Poppins", sans-serif !default;
+
+// Colors
+// Status colors
+$danger:        #FF3D71 !default;
+$danger-light:  #FF708D !default;
+$warning:       #FFAA00 !default;
+$warning-light: #FFC94D !default;
+$info:          #0095FF !default;
+$info-light:    #42AAFF !default;
+$success:       #00D68F !default;
+$success-light: #2CE69B !default;
+// Global colors
+$accent:        #E4277A !default;
+$gray:          #8F9BB3 !default;
+$gray-2:        #C5CEE0 !default;
+
+// Shadows
+$shadow: 0px 8px 16px !default;

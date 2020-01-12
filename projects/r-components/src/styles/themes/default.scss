@@ -1,0 +1,11 @@
+@import "../variables.scss";
+
+$default-color-1: #FFFFFF !default;
+$default-color-2: #EDF1F7 !default;
+$default-color-3: #F7F9FC !default;
+$default-color-4: #E4E9F2 !default;
+$default-color-5: #F7F9FC !default;
+$default-color-6: #1A1F33 !default;
+
+$default-shadow-1: $shadow rgba(default-color-6, 0.1) !default;
+$default-shadow-2: $shadow rgba(default-color-6, 0.2) !default;

@@ -1,0 +1,15 @@
+@function r-theme($key) {
+  @return map-get($r-theme-map, $key);
+}
+
+$r-theme-map: (
+  button-small-font-size: 12px,
+  button-small-line-height: 16px,
+  button-small-padding: 7px 14px,
+  button-medium-font-size: 14px,
+  button-medium-line-height: 16px,
+  button-medium-padding: 11px 18px,
+  button-large-font-size: 16px,
+  button-large-line-height: 20px,
+  button-large-padding: 13px 18px
+);

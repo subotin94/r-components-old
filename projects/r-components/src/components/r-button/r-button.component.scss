@@ -1,7 +1,24 @@
-@import "./r-button.theme.scss";
+@import "./_r-button.theme.scss";
 
 :host {
   @include r-button-theme();
-  border: none;
-  outline: none;
+  appearance: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+
+  &.full-width {
+    width: 100%;
+  }
 }

@@ -1,0 +1,36 @@
+@import "../../styles/variants.scss";
+@import "../../styles/r-theme.scss";
+
+@mixin button-filled() {
+  [r-button].appearance-filled {
+    @each $status in r-get-statuses() {
+      &.status-#{$status} {
+        background-color: r-theme(button-filled-#{$status}-background-color);
+        border-width: r-theme(button-filled-border-width);
+        border-color: r-theme(button-filled-#{$status}-border-color);
+        color: r-theme(button-filled-#{$status}--color);
+
+        &:focus {
+          background-color: r-theme(button-filled-#{$status}-focus-background-color);
+          border-color: r-theme(button-filled-#{$status}-focus-border-color);
+        }
+
+        &:hover {
+          background-color: r-theme(button-filled-#{$status}-hover-background-color);
+          border-color: r-theme(button-filled-#{$status}-hover-border-color);
+        }
+
+        &:active {
+          background-color: r-theme(button-filled-#{$status}-active-background-color);
+          border-color: r-theme(button-filled-#{$status}-active-border-color);
+        }
+
+        &[disabled] {
+          background-color: r-theme(button-filled-#{$status}-disabled-background-color);
+          border-color: r-theme(button-filled-#{$status}-disabled-border-color);
+          color: r-theme(button-filled-#{$status}-disabled-text-color);
+        }
+      }
+    }
+  }
+}
