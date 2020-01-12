@@ -7,15 +7,67 @@ $r-theme-map: ();
   @return map-get($r-theme-map, $key);
 }
 
+@function r-get-maps() {
+  @return $global-map, $status-map, $button-map;
+}
+
 $global-map: (
   border-radius-rectangle: 4px,
   border-radius-rounded-pill: 18px,
-  border-radius-rounded: 50%
+  border-radius-rounded: 50%,
+  outline-color: rgba(143, 155, 179, 0.16)
+);
+
+$status-map: (
+  filled-border: 1px solid,
+  filled-border-2: 2px solid,
+  filled-primary-background-color: $primary,
+  filled-primary-border-color: $primary,
+  filled-primary-hover-background-color: $primary-light,
+  filled-primary-hover-border-color: $primary-light,
+  filled-primary-active-background-color: $primary-dark,
+  filled-primary-active-border-color: $primary-dark,
+  filled-primary-color: $white,
+
+  filled-danger-background-color: $danger,
+  filled-danger-hover-background-color: $danger-light,
+  filled-danger-border-color: $danger,
+  filled-danger-hover-border-color: $danger-light,
+  filled-danger-active-background-color: $danger-dark,
+  filled-danger-active-border-color: $danger-dark,
+  filled-danger-color: $white,
+
+  filled-warning-background-color: $warning,
+  filled-warning-hover-background-color: $warning-light,
+  filled-warning-border-color: $warning,
+  filled-warning-hover-border-color: $warning-light,
+  filled-warning-active-background-color: $warning-dark,
+  filled-warning-active-border-color: $warning-dark,
+  filled-warning-color: $white,
+
+  filled-info-background-color: $info,
+  filled-info-hover-background-color: $info-light,
+  filled-info-border-color: $info,
+  filled-info-hover-border-color: $info-light,
+  filled-info-active-background-color: $info-dark,
+  filled-info-active-border-color: $info-dark,
+  filled-info-color: $white,
+
+  filled-success-background-color: $success,
+  filled-success-hover-background-color: $success-light,
+  filled-success-border-color: $success,
+  filled-success-hover-border-color: $success-light,
+  filled-success-color: $white,
+  filled-success-active-background-color: $success-dark,
+  filled-success-active-border-color: $success-dark,
+
+  filled-disabled-background-color: $default-disabled-color-1,
+  filled-disabled-border-color: transparent,
+  filled-disabled-color: $default-disabled-color-2
 );
 
 $button-map: (
   button-outline-width: 6px,
-  button-outline-color: rgba(143, 155, 179, 0.16),
   button-small-font-size: 12px,
   button-small-line-height: 16px,
   button-small-padding: 7px 14px,
@@ -24,56 +76,9 @@ $button-map: (
   button-medium-padding: 11px 18px,
   button-large-font-size: 16px,
   button-large-line-height: 20px,
-  button-large-padding: 13px 18px,
-
-  button-filled-disabled-border-color: transparent,
-  button-filled-disabled-background-color: $default-disabled-color-1,
-  button-filled-disabled-color: $default-disabled-color-2,
-
-  button-filled-primary-background-color: $primary,
-  button-filled-primary-hover-background-color: $primary-light,
-  button-filled-primary-border-color: $primary,
-  button-filled-primary-hover-border-color: $primary-light,
-  button-filled-primary-color: $white,
-  button-filled-primary-active-background-color: $primary-dark,
-  button-filled-primary-active-border-color: $primary-dark,
-  button-filled-primary-disabled-border-color: $primary,
-  button-filled-primary-disabled-background-color: $primary,
-  button-filled-primary-disabled-color: $primary,
-
-  button-filled-danger-background-color: $danger,
-  button-filled-danger-hover-background-color: $danger-light,
-  button-filled-danger-border-color: $danger,
-  button-filled-danger-hover-border-color: $danger-light,
-  button-filled-danger-color: $white,
-  button-filled-danger-active-background-color: $danger-dark,
-  button-filled-danger-active-border-color: $danger-dark,
-
-  button-filled-warning-background-color: $warning,
-  button-filled-warning-hover-background-color: $warning-light,
-  button-filled-warning-border-color: $warning,
-  button-filled-warning-hover-border-color: $warning-light,
-  button-filled-warning-color: $white,
-  button-filled-warning-active-background-color: $warning-dark,
-  button-filled-warning-active-border-color: $warning-dark,
-
-  button-filled-info-background-color: $info,
-  button-filled-info-hover-background-color: $info-light,
-  button-filled-info-border-color: $info,
-  button-filled-info-hover-border-color: $info-light,
-  button-filled-info-color: $white,
-  button-filled-info-active-background-color: $info-dark,
-  button-filled-info-active-border-color: $info-dark,
-
-  button-filled-success-background-color: $success,
-  button-filled-success-hover-background-color: $success-light,
-  button-filled-success-border-color: $success,
-  button-filled-success-hover-border-color: $success-light,
-  button-filled-success-color: $white,
-  button-filled-success-active-background-color: $success-dark,
-  button-filled-success-active-border-color: $success-dark,
+  button-large-padding: 13px 18px
 );
 
-@each $map in $global-map, $button-map {
+@each $map in r-get-maps() {
   $r-theme-map: map-merge($r-theme-map, $map);
 }

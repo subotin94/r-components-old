@@ -5,7 +5,7 @@
 @mixin r-button-theme {
   &[r-button]:focus {
     outline: none;
-    @include r-outline(r-theme(button-outline-width), r-theme(button-outline-color));
+    @include r-outline(r-theme(button-outline-width), r-theme(outline-color));
   }
   @each $shape in r-get-shapes() {
     &.shape-#{$shape} {

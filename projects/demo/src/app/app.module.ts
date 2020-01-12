@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RButtonModule } from '../../../r-components/src/public-api';
+import { RButtonModule, RAlertModule } from '../../../r-components/src/public-api';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,8 @@ import { RButtonModule } from '../../../r-components/src/public-api';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RButtonModule
+    RButtonModule,
+    RAlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]

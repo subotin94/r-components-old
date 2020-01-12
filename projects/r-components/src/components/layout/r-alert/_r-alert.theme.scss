@@ -1,0 +1,24 @@
+@import "../../../styles/r-theme.scss";
+@import "../../../styles/variants.scss";
+
+@mixin alert-theme() {
+  &r-alert.appearance-filled {
+    @each $status in r-get-statuses() {
+      &.status-#{$status} {
+        background-color: r-theme(filled-#{$status}-background-color);
+        border: r-theme(filled-border-2);
+        border-color: r-theme(filled-#{$status}-border-color);
+        color: r-theme(filled-#{$status}-color);
+      }
+    }
+  }
+  &r-alert.appearance-outline {
+    @each $status in r-get-statuses() {
+      &.status-#{$status} {
+        background-color: #f7f9fc;
+        border: r-theme(filled-border-2);
+        border-color: r-theme(filled-#{$status}-border-color);
+      }
+    }
+  }
+}
