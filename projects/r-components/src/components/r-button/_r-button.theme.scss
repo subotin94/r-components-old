@@ -1,11 +1,22 @@
 @import "../../styles/variants.scss";
 @import "../../styles/r-theme.scss";
+@import "../../styles/mixins.scss";
 
 @mixin r-button-theme {
+  &[r-button]:focus {
+    outline: none;
+    @include r-outline(r-theme(button-outline-width), r-theme(button-outline-color));
+  }
+  @each $shape in r-get-shapes() {
+    &.shape-#{$shape} {
+      border-radius: r-theme(border-radius-#{$shape});
+    }
+  }
   @each $size in r-get-sizes() {
     &.size-#{$size} {
       font-size: r-theme(button-#{$size}-font-size);
       line-height: r-theme(button-#{$size}-line-height);
+      padding: r-theme(button-#{$size}-padding);
 
       r-icon {
         font-size: r-theme(button-#{$size}-font-size);

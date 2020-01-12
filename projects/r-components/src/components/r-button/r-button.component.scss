@@ -1,7 +1,11 @@
 @import "./_r-button.theme.scss";
+@import "./_r-button-filled.scss";
 
 :host {
   @include r-button-theme();
+  @include button-filled();
+  @include r-component-animation(background-color, border-color, box-shadow, color);
+
   appearance: none;
   text-align: center;
   text-decoration: none;
@@ -13,6 +17,8 @@
   user-select: none;
   font-weight: 700;
   text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
 
   &:hover, &:focus {
     text-decoration: none;

@@ -1,0 +1,19 @@
+@import "./r-theme.scss";
+
+@mixin r-component-animation($properties...) {
+  transition-duration: 0.15s;
+  transition-property: $properties;
+  transition-timing-function: ease-in;
+}
+
+@mixin r-outline($outline-width, $outline-color, $options: (inset-shadow: false)) {
+  $outset-shadow: 0 0 0 $outline-width $outline-color;
+  box-shadow: $outset-shadow;
+
+  @if (map-get($options, 'inset-shadow')) {
+    &:not(:hover):not(:active) {
+      box-shadow: $outset-shadow,
+                  inset 0 0 0 100vmax r-theme(button-outline-color);
+    }
+  }
+}

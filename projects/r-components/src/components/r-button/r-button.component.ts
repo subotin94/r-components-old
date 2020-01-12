@@ -82,57 +82,42 @@ export class RButtonComponent {
   }
   private _disabled = false;
 
-  @HostBinding('class.small')
-  get small() {
-    return this.size === 'small';
-  }
-
-  @HostBinding('class.medium')
-  get medium() {
-    return this.size === 'medium';
-  }
-
-  @HostBinding('class.large')
-  get large() {
-    return this.size === 'large';
-  }
-
-  @HostBinding('class.primary')
+  @HostBinding('class.status-primary')
   get primary() {
     return this.status === 'primary';
   }
 
-  @HostBinding('class.info')
+  @HostBinding('class.status-info')
   get info() {
     return this.status === 'info';
   }
 
-  @HostBinding('class.success')
+  @HostBinding('class.status-success')
   get success() {
     return this.status === 'success';
   }
 
-  @HostBinding('class.warning')
+  @HostBinding('class.status-warning')
   get warning() {
     return this.status === 'warning';
   }
 
-  @HostBinding('class.danger')
+  @HostBinding('class.status-danger')
   get danger() {
     return this.status === 'danger';
   }
 
-  @HostBinding('class.rectangle')
+  @HostBinding('class.shape-rectangle')
   get rectangle() {
     return this.shape === 'rectangle';
   }
 
-  @HostBinding('class.rounded')
+  @HostBinding('class.shape-rounded')
   get roundedMinimal() {
     return this.shape === 'rounded';
   }
 
-  @HostBinding('class.rounded-pill')
+  @HostBinding('class.shape-rounded-pill')
   get roundedPill() {
     return this.shape === 'rounded-pill';
   }
@@ -140,6 +125,21 @@ export class RButtonComponent {
   @HostBinding('class.rounded')
   get rounded() {
     return this.shape === 'rounded';
+  }
+
+  @HostBinding('class.size-small')
+  get small() {
+    return this.size === 'small';
+  }
+
+  @HostBinding('class.size-medium')
+  get medium() {
+    return this.size === 'medium';
+  }
+
+  @HostBinding('class.size-large')
+  get large() {
+    return this.size === 'large';
   }
 
   @HostListener('click', ['$event'])
