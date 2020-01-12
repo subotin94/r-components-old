@@ -3,7 +3,7 @@
 @import "../../../styles/mixins.scss";
 
 @mixin button-filled() {
-  &[r-button].appearance-filled {
+  &[r-button].appearance-filled, &[r-icon-button].appearance-filled {
     @each $status in r-get-statuses() {
       &.status-#{$status} {
         background-color: r-theme(filled-#{$status}-background-color);

@@ -5,7 +5,8 @@ import {
   ChangeDetectionStrategy,
   Renderer2,
   ElementRef,
-  HostListener
+  HostListener,
+  OnInit
 } from '@angular/core';
 import {
   RComponentSize,
@@ -16,26 +17,50 @@ import {
 
 @Component({
   selector: `
-    a[r-button],
     button[r-button],
-    input[type="button"][r-button],
-    input[type="submit"][r-button]
+    button[r-icon-button]
   `,
   template: `
+    <ng-container>
+      <r-icon *ngIf="icon" [name]="icon"></r-icon>
+    </ng-container>
     <ng-content></ng-content>
-  `,
+`,
   styleUrls: ['./r-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RButtonComponent {
+export class RButtonComponent implements OnInit {
 
   @Input() size: RComponentSize = 'medium';
   @Input() status: RComponentStatus = 'primary';
   @Input() shape: RComponentShape = 'rectangle';
   @Input() appearance: RComponentAppearance = 'filled';
+  icon: string;
 
   constructor(private readonly renderer: Renderer2,
               private readonly hostElement: ElementRef<HTMLElement>) {
+  }
+
+  ngOnInit(): void {
+    if (this.isIconButton()) {
+      this.icon = this.getIcon();
+    }
+  }
+
+  getIcon(): string {
+    return this.getAttribute('icon');
+  }
+
+  private getAttribute(attribute: string): string {
+    return this.hostElement.nativeElement.getAttribute(attribute);
+  }
+
+  private isIconButton(): boolean {
+    return this.hasAttribute('r-icon-button') && this.hasAttribute('icon');
+  }
+
+  private hasAttribute(attribute: string): boolean {
+    return this.hostElement.nativeElement.hasAttribute(attribute);
   }
 
   @Input()
