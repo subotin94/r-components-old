@@ -1,13 +1,32 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { OverlayModule } from '@angular/cdk/overlay';
 import { RToastComponent } from './r-toast.component';
-
-
+import { RToastService, RToastContainerRegistry } from './r-toast.service';
+import { RToastContainerComponent } from './r-toast-container.component';
 
 @NgModule({
-  declarations: [RToastComponent],
+  declarations: [
+    RToastComponent,
+    RToastContainerComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    OverlayModule
+  ],
+  entryComponents: [
+    RToastComponent,
+    RToastContainerComponent
   ]
 })
-export class RToastModule { }
+export class RToastModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: RToastModule,
+      providers: [
+        RToastService,
+        RToastContainerRegistry
+      ]
+    };
+  }
+}

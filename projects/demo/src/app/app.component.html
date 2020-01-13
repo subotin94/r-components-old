@@ -1,5 +1,6 @@
 <section>
   <h1>Buttons:</h1>
+  <pre><code [highlight]="buttonModule"></code></pre>
   <ul>
     <dl>
       <dt>
@@ -11,6 +12,7 @@
         <button r-button status="primary">Primary</button>
         <button r-button status="info">Info</button>
         <button r-button status="success">Success</button>
+        <pre><code [highlight]="statusButtons"></code></pre>
       </dd>
       <dt>
         <h3>Icon Buttons:</h3>
@@ -22,12 +24,17 @@
         <button r-icon-button icon="add" status="primary"></button>
         <button r-icon-button icon="info" status="info"></button>
         <button r-icon-button icon="done" status="success"></button>
+        <pre><code [highlight]="iconButtons"></code></pre>
+        <p>
+          Icon buttons use <a href="https://material.io/resources/icons">Material icons font</a>
+        </p>
       </dd>
       <dt>
         <h3>Button Shapes:</h3>
       </dt>
       <dd>
         <button r-button status="primary" shape="rounded-pill">Rounded pill</button>
+        <pre><code [highlight]="buttonShapes"></code></pre>
       </dd>
       <dt>
         <h3>Disabled Buttons:</h3>
@@ -35,6 +42,7 @@
       <dd>
         <button r-button disabled="true">Disabled</button>
         <button r-icon-button icon="add" status="primary" disabled="true"></button>
+        <pre><code [highlight]="disabledButtons"></code></pre>
       </dd>
     </dl>
   </ul>
@@ -42,8 +50,10 @@
 
 <section>
   <h1>Alerts:</h1>
+  <pre><code [highlight]="alertModule"></code></pre>
   <ul>
     <h3>Outline alerts:</h3>
+    <p>Alerts are outline by default</p>
     <li>
       <r-alert closable="true" status="danger">Danger outline</r-alert>
     </li>
@@ -58,6 +68,9 @@
     </li>
     <li>
       <r-alert closable="true" status="success">Success outline</r-alert>
+    </li>
+    <li>
+      <pre><code [highlight]="outlineAlerts"></code></pre>
     </li>
   </ul>
   <ul>
@@ -76,6 +89,9 @@
     </li>
     <li>
       <r-alert appearance="filled" closable="true" status="success">Success filled</r-alert>
+    </li>
+    <li>
+      <pre><code [highlight]="filledAlerts"></code></pre>
     </li>
   </ul>
 </section>

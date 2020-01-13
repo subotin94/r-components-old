@@ -1,0 +1,81 @@
+@import "../../../styles/variables.scss";
+
+:host {
+  display: flex;
+  align-items: center;
+  margin: 8px;
+  width: 366px;
+  height: 42px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: $min-border-radius;
+  padding: 16px;
+  box-shadow: $default-shadow;
+  color: $default-primary;
+
+  // font-family: "Open-sans", sans-serif;
+
+  // .title {
+  //   font-family: r-theme(toastr-title-text-font-family);
+  //   font-size: r-theme(toastr-title-text-font-size);
+  //   font-weight: r-theme(toastr-title-text-font-weight);
+  //   line-height: r-theme(toastr-title-text-line-height);
+  // }
+
+  .message {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .icon-container {
+    margin-right: 1.25rem;
+    // border-radius: r-theme(toastr-border-radius);
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    r-icon {
+      font-size: 1.5rem;
+    }
+  }
+
+  .title {
+    margin-right: 0.25rem;
+  }
+
+  &.default,
+  &:not(.has-icon) {
+    .content-container {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &.destroy-by-click {
+    cursor: pointer;
+  }
+
+  r-icon {
+    font-size: 2.5rem;
+  }
+
+  svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+::ng-deep {
+  .cdk-global-overlay-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .r-dark {
+    r-toast {
+      box-shadow: $dark-shadow !important;
+    }
+  }
+}

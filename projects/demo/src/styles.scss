@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import '~highlight.js/styles/atom-one-dark.css';
+@import "../../r-components/src/styles/typography.scss";
 $font: "Poppins", sans-serif;
 
 html, body {

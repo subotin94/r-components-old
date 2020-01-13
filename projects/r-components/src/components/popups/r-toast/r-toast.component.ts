@@ -1,15 +1,90 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostBinding, HostListener } from '@angular/core';
+import { RToast } from './r-toast.model';
 
 @Component({
-  selector: 'lib-r-toast',
+  selector: 'r-toast',
   templateUrl: './r-toast.component.html',
   styleUrls: ['./r-toast.component.scss']
 })
-export class RToastComponent implements OnInit {
+export class RToastComponent {
 
-  constructor() { }
+  @Input()
+  toast: RToast;
 
-  ngOnInit() {
+  @Output() destroy: EventEmitter<void> = new EventEmitter();
+
+  @HostBinding('class.info')
+  get info(): boolean {
+    return this.toast.config.status === 'info';
+  }
+
+  @HostBinding('class.success')
+  get success(): boolean {
+    return this.toast.config.status === 'success';
+  }
+
+  @HostBinding('class.warning')
+  get warning(): boolean {
+    return this.toast.config.status === 'warning';
+  }
+
+  @HostBinding('class.danger')
+  get danger(): boolean {
+    return this.toast.config.status === 'danger';
+  }
+
+  // @HostBinding('class.destroy-by-click')
+  // get destroyByClick(): boolean {
+  //   return this.toast.config.destroyByClick;
+  // }
+
+  // @HostBinding('class.has-icon')
+  // get hasIcon(): boolean {
+  //   const { icon } = this.toast.config;
+  //   if (typeof icon === 'string') {
+  //     return true;
+  //   }
+
+  //   return !!(icon && (icon as RIconConfig).icon);
+  // }
+
+  // @HostBinding('class.custom-icon')
+  // get customIcon(): boolean {
+  //   return !!this.icon;
+  // }
+
+  // get icon(): string | RIconConfig {
+  //   return this.toast.config.icon;
+  // }
+
+  /* @deprecated Use pack property of icon config */
+  // get iconPack(): string {
+  //   return this.toast.config.iconPack;
+  // }
+
+  /*
+    @breaking-change 5 remove
+    @deprecated
+  */
+  // get iconConfig(): RIconConfig {
+  //   const toastConfig = this.toast.config;
+  //   const isIconName = typeof this.icon === 'string';
+
+  //   if (!isIconName) {
+  //     return toastConfig.icon as RIconConfig;
+  //   }
+
+  //   const iconConfig: RIconConfig = { icon: toastConfig.icon as string };
+  //   if (toastConfig.iconPack) {
+  //     iconConfig.pack = toastConfig.iconPack;
+  //   }
+
+  //   return iconConfig;
+  // }
+
+  @HostListener('click')
+  onClick() {
+    this.destroy.emit();
   }
 
 }
