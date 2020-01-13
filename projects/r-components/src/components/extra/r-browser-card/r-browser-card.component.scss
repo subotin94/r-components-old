@@ -1,0 +1,41 @@
+:host {
+  background-color: #282C34;
+  .header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0 15px;
+    padding: 19px 22px 10px;
+    display: flex;
+    background-color: #282C34;
+
+    .span {
+      height: 13px;
+      width: 13px;
+      border-radius: 50%;
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+      &.red {
+        background-color: #FF5F56;
+      }
+      &.yellow {
+        background-color: #FFBD2E;
+      }
+      &.green {
+        background-color: #27C93F;
+      }
+    }
+  }
+  .body {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 0 15px;
+    padding: 0 22px;
+    background-color: #282C34;
+    ::ng-deep {
+      pre {
+        margin: 0;
+      }
+    }
+  }
+}
