@@ -13,32 +13,37 @@ export class RToastComponent {
 
   @Output() destroy: EventEmitter<void> = new EventEmitter();
 
-  @HostBinding('class.info')
+  @HostBinding('class.status-info')
   get info(): boolean {
     return this.toast.config.status === 'info';
   }
 
-  @HostBinding('class.success')
+  @HostBinding('class.status-primary')
+  get primary(): boolean {
+    return this.toast.config.status === 'primary';
+  }
+
+  @HostBinding('class.status-success')
   get success(): boolean {
     return this.toast.config.status === 'success';
   }
 
-  @HostBinding('class.warning')
+  @HostBinding('class.status-warning')
   get warning(): boolean {
     return this.toast.config.status === 'warning';
   }
 
-  @HostBinding('class.danger')
+  @HostBinding('class.status-danger')
   get danger(): boolean {
     return this.toast.config.status === 'danger';
   }
 
-  // @HostBinding('class.destroy-by-click')
+  // @HostBinding('class.status-destroy-by-click')
   // get destroyByClick(): boolean {
   //   return this.toast.config.destroyByClick;
   // }
 
-  // @HostBinding('class.has-icon')
+  // @HostBinding('class.status-has-icon')
   // get hasIcon(): boolean {
   //   const { icon } = this.toast.config;
   //   if (typeof icon === 'string') {
@@ -48,7 +53,7 @@ export class RToastComponent {
   //   return !!(icon && (icon as RIconConfig).icon);
   // }
 
-  // @HostBinding('class.custom-icon')
+  // @HostBinding('class.status-custom-icon')
   // get customIcon(): boolean {
   //   return !!this.icon;
   // }

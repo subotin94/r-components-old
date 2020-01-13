@@ -1,4 +1,28 @@
 <section>
+  <h1>Toasts:</h1>
+  <r-browser-card>
+    <pre><code [highlight]="toastModule"></code></pre>
+  </r-browser-card>
+  <ul>
+    <dl>
+      <dt>
+        <h3>Status Toasts:</h3>
+      </dt>
+      <dd>
+        <button (click)="dangerToast()" r-button status="danger">Danger</button>
+        <button (click)="warningToast()" r-button status="warning">Warning</button>
+        <button (click)="primaryToast()" r-button status="primary">Primary</button>
+        <button (click)="infoToast()" r-button status="info">Info</button>
+        <button (click)="successToast()" r-button status="success">Success</button>
+        <r-browser-card>
+          <pre><code [highlight]="toastServicee"></code></pre>
+        </r-browser-card>
+      </dd>
+    </dl>
+  </ul>
+</section>
+
+<section>
   <h1>Buttons:</h1>
   <r-browser-card>
     <pre><code [highlight]="buttonModule"></code></pre>

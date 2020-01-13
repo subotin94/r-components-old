@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 
@@ -7,6 +8,7 @@ import { AppComponent } from './app.component';
 import { RButtonModule, RAlertModule } from '../../../r-components/src/public-api';
 import { RIconModule } from '../../../r-components/src/components/icons/r-icon/r-icon.module';
 import { RBrowserCardModule } from '../../../r-components/src/components/extra/r-browser-card/browser-card';
+import { RToastModule } from '../../../r-components/src/components/popups/r-toast/r-toast.module';
 
 export function getHighlightLanguages() {
   return {
@@ -22,12 +24,14 @@ export function getHighlightLanguages() {
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HighlightModule,
     RButtonModule,
     RAlertModule,
     RIconModule,
-    RBrowserCardModule
+    RBrowserCardModule,
+    RToastModule.forRoot()
   ],
   providers: [
     {

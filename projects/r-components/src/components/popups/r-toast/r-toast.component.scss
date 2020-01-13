@@ -1,6 +1,8 @@
-@import "../../../styles/variables.scss";
+@import "../../../styles/r-theme.scss";
+@import "./r-toast.component.theme";
 
 :host {
+  @include toast-theme();
   display: flex;
   align-items: center;
   margin: 8px;
@@ -8,10 +10,11 @@
   height: 42px;
   border-style: solid;
   border-width: 1px;
-  border-radius: $min-border-radius;
+  border-radius: 4px;
   padding: 16px;
-  box-shadow: $default-shadow;
-  color: $default-primary;
+  // TODO
+  // box-shadow: r-theme();
+  color: r-theme(filled-primary-color);
 
   // font-family: "Open-sans", sans-serif;
 
@@ -75,7 +78,7 @@
   }
   .r-dark {
     r-toast {
-      box-shadow: $dark-shadow !important;
+      // box-shadow: $dark-shadow !important;
     }
   }
 }

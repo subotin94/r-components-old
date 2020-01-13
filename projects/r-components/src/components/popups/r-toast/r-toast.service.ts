@@ -104,9 +104,9 @@ export class RToastContainer {
   constructor(private readonly containerRef: ComponentRef<RToastContainerComponent>) { }
 
   attach(toast: RToast): RToastRef {
-    if (/** toast.config.preventDuplicates && */this.isDuplicate(toast)) {
-      return;
-    }
+    // if (/** toast.config.preventDuplicates && */this.isDuplicate(toast)) {
+    //   return;
+    // }
     this.removeToastIfLimitReached(toast);
     const toastComponent: RToastComponent = this.attachToast(toast);
     // if (toast.config.destroyByClick) {
@@ -114,8 +114,8 @@ export class RToastContainer {
     // }
 
     if (toast.config.duration) {
-      this.setDestroyTimeout(toast);
     }
+    this.setDestroyTimeout(toast);
     this.prevToast = toast;
     return new RToastRef(this, toast);
   }

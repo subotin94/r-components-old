@@ -1,0 +1,14 @@
+@import "../../../styles/r-theme.scss";
+@import "../../../styles/variants.scss";
+
+
+@mixin toast-theme() {
+  &r-toast {
+    @each $status in r-get-statuses() {
+      &.status-#{$status} {
+        background-color: r-theme(filled-#{$status}-background-color);
+        border-color: r-theme(filled-#{$status}-border-color);
+      }
+    }
+  }
+}
