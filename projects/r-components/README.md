@@ -1,3 +1,3 @@
 # RComponents
 
-Powerfull UI library for Angular.
+Powerful UI library for Angular.
