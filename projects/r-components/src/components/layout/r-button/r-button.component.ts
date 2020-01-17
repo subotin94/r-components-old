@@ -137,19 +137,9 @@ export class RButtonComponent implements OnInit {
     return this.shape === 'rectangle';
   }
 
-  @HostBinding('class.shape-rounded')
-  get roundedMinimal() {
-    return this.shape === 'rounded';
-  }
-
   @HostBinding('class.shape-rounded-pill')
   get roundedPill() {
     return this.shape === 'rounded-pill';
-  }
-
-  @HostBinding('class.rounded')
-  get rounded() {
-    return this.shape === 'rounded';
   }
 
   @HostBinding('class.size-small')

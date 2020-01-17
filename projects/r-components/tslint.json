@@ -3,14 +3,11 @@
   "rules": {
     "directive-selector": [
       true,
-      "attribute",
-      "lib",
-      "camelCase"
+      "attribute"
     ],
     "component-selector": [
       true,
-      "element",
-      "lib"
+      "element"
     ]
   }
 }

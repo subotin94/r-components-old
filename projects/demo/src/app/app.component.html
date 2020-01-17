@@ -1,9 +1,40 @@
 <section>
   <h1>Welcome to r-components demo preview</h1>
+  <!-- TODO create r-hint component -->
   <p>This is not production ready library yet</p>
+  <!-- TODO create r-hint component -->
   <r-browser-card>
-    <pre><code [highlight]="'npm i @r-components/theme'"></code></pre>
+    <pre><code [highlight]="'npm i @r-components/theme @angular/cdk @angular/animations @angular/material'"></code></pre>
   </r-browser-card>
+</section>
+<section class="inputs">
+  <h1>Inputs:</h1>
+  <!-- <r-browser-card>
+    <pre><code [highlight]="inputModule"></code></pre>
+  </r-browser-card> -->
+  <ul>
+    <dl>
+      <dt><h3>Status Inputs:</h3></dt>
+      <dd>
+        <input r-input status="danger" placeholder="Danger input">
+        <input r-input status="warning" placeholder="Warning input">
+        <input r-input status="primary" placeholder="Primary input">
+        <input r-input status="info" placeholder="Info input">
+        <input r-input status="success" placeholder="Success input">
+        <input r-input status="basic" placeholder="Basic input">
+        <textarea r-input status="danger" cols="21" rows="3" placeholder="Danger textarea"></textarea>
+        <textarea r-input status="warning" cols="21" rows="3" placeholder="Warning textarea"></textarea>
+        <textarea r-input status="primary" cols="21" rows="3" placeholder="Primary textarea"></textarea>
+        <textarea r-input status="info" cols="21" rows="3" placeholder="Info textarea"></textarea>
+        <textarea r-input status="success" cols="21" rows="3" placeholder="Success textarea"></textarea>
+        <textarea r-input status="basic" cols="21" rows="3" placeholder="Basic textarea"></textarea>
+        <!-- <r-browser-card>
+          <pre><code [highlight]="statusInputs"></code></pre>
+        </r-browser-card> -->
+      </dd>
+
+    </dl>
+  </ul>
 </section>
 <section>
   <h1>Toasts:</h1>
@@ -21,6 +52,7 @@
         <button (click)="primaryToast()" r-button status="primary">Primary</button>
         <button (click)="infoToast()" r-button status="info">Info</button>
         <button (click)="successToast()" r-button status="success">Success</button>
+        <!-- TODO default toast -->
         <r-browser-card>
           <pre><code [highlight]="toastServicee"></code></pre>
         </r-browser-card>
@@ -45,6 +77,7 @@
         <button r-button status="primary">Primary</button>
         <button r-button status="info">Info</button>
         <button r-button status="success">Success</button>
+        <!-- TODO basic button -->
         <r-browser-card>
           <pre><code [highlight]="statusButtons"></code></pre>
         </r-browser-card>
@@ -85,6 +118,7 @@
           <pre><code [highlight]="disabledButtons"></code></pre>
         </r-browser-card>
       </dd>
+      <!-- TODO outline buttons -->
     </dl>
   </ul>
 </section>
@@ -112,6 +146,7 @@
     <li>
       <r-alert closable="true" status="success">Success outline</r-alert>
     </li>
+    <!-- TODO basic alert -->
     <r-browser-card>
       <pre><code [highlight]="outlineAlerts"></code></pre>
     </r-browser-card>
@@ -133,6 +168,7 @@
     <li>
       <r-alert appearance="filled" closable="true" status="success">Success filled</r-alert>
     </li>
+    <!-- TODO basic alert -->
     <r-browser-card>
       <pre><code [highlight]="filledAlerts"></code></pre>
     </r-browser-card>

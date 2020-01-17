@@ -1,0 +1,5 @@
+@import "./src/components/form-controls/r-input/r-input.theme.scss";
+
+@mixin r-theme() {
+  @include input-theme();
+}

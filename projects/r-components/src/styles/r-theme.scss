@@ -8,7 +8,7 @@ $r-theme-map: ();
 }
 
 @function r-get-maps() {
-  @return $global-map, $status-map, $button-map;
+  @return $global-map, $status-map, $button-map, $default-map, $input-map;
 }
 
 $global-map: (
@@ -77,6 +77,22 @@ $button-map: (
   button-large-font-size: 16px,
   button-large-line-height: 20px,
   button-large-padding: 13px 18px
+);
+
+$input-map: (
+  input-outline-width: 6px,
+  input-small-font-size: 12px,
+  input-small-font-weight: 600,
+  input-small-line-height: 24px,
+  input-small-padding: 3px 18px,
+  input-medium-font-size: 15px,
+  input-medium-font-weight: 600,
+  input-medium-line-height: 24px,
+  input-medium-padding: 7px 18px,
+  input-large-font-size: 15px,
+  input-large-font-weight: 600,
+  input-large-line-height: 20px,
+  input-large-padding: 11px 18px,
 );
 
 @each $map in r-get-maps() {

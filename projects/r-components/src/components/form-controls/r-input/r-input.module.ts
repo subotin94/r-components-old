@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RInputComponent } from './r-input.component';
-
-
+import { RInputDirective } from './r-input.directive';
 
 @NgModule({
-  declarations: [RInputComponent],
+  declarations: [
+    RInputDirective
+  ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    RInputDirective
   ]
 })
 export class RInputModule { }

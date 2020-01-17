@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 @import '~highlight.js/styles/atom-one-dark.css';
 @import "../../r-components/src/styles/typography.scss";
+@import "../../r-components/styles.scss";
+@include r-theme();
+
 $font: "Poppins", sans-serif;
 
 html, body {

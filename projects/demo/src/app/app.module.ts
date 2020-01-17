@@ -9,14 +9,7 @@ import { RButtonModule, RAlertModule } from '../../../r-components/src/public-ap
 import { RIconModule } from '../../../r-components/src/components/icons/r-icon/r-icon.module';
 import { RBrowserCardModule } from '../../../r-components/src/components/extra/r-browser-card/browser-card';
 import { RToastModule } from '../../../r-components/src/components/popups/r-toast/r-toast.module';
-
-export function getHighlightLanguages() {
-  return {
-    typescript: () => import('highlight.js/lib/languages/typescript'),
-    css: () => import('highlight.js/lib/languages/css'),
-    xml: () => import('highlight.js/lib/languages/xml')
-  };
-}
+import { RInputModule } from '../../../r-components/src/components/form-controls/r-input/r-input.module';
 
 @NgModule({
   declarations: [
@@ -31,13 +24,18 @@ export function getHighlightLanguages() {
     RAlertModule,
     RIconModule,
     RBrowserCardModule,
+    RInputModule,
     RToastModule.forRoot()
   ],
   providers: [
     {
       provide: HIGHLIGHT_OPTIONS,
       useValue: {
-        languages: getHighlightLanguages()
+        languages: {
+          typescript: () => import('highlight.js/lib/languages/typescript'),
+          css: () => import('highlight.js/lib/languages/css'),
+          xml: () => import('highlight.js/lib/languages/xml')
+        }
       }
     }
   ],

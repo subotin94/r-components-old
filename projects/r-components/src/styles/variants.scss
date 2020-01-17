@@ -1,5 +1,5 @@
 @function r-get-statuses() {
-  @return 'primary', 'info', 'success', 'warning', 'danger';
+  @return 'basic', 'primary', 'info', 'success', 'warning', 'danger';
 }
 
 @function r-get-sizes() {

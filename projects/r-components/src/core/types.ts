@@ -1,4 +1,4 @@
 export type RComponentSize = 'small' | 'medium' | 'large';
-export type RComponentStatus = 'primary' | 'info' | 'success' | 'warning' | 'danger';
-export type RComponentShape = 'rectangle' | 'rounded-pill' | 'rounded';
+export type RComponentStatus = 'basic' | 'primary' | 'info' | 'success' | 'warning' | 'danger';
+export type RComponentShape = 'rectangle' | 'rounded-pill';
 export type RComponentAppearance = 'outline' | 'filled';
