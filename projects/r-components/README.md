@@ -1,3 +1,3 @@
-# RComponents
+# r-components
 
-Powerful UI library for Angular.
+Please see the official documentation at [https://r-components.web.app](https://r-components.web.app)

@@ -1,9 +1,37 @@
 {
-  "name": "@r-components",
-  "version": "0.0.1",
+  "name": "@r-components/theme",
+  "version": "0.1.2",
   "peerDependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14"
+    "@angular/animations": "^8.0.0",
+    "@angular/common": "^8.0.0",
+    "@angular/core": "^8.0.0",
+    "@angular/router": "^8.0.0",
+    "@angular/cdk": "^8.0.0",
+    "@angular/material": "^8.0.0",
+    "rxjs": "^6.5.1"
   },
-  "dependencies": {}
+  "description": "Powerful Angular UI library",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/subotin94/r-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/subotin94/r-components/issues"
+  },
+  "homepage": "https://r-components.web.app",
+  "keywords": [
+    "@r-components/theme",
+    "@r-components",
+    "r-components",
+    "angular components",
+    "angular",
+    "components",
+    "theme",
+    "angular theme",
+    "ui",
+    "ui components",
+    "ui library",
+    "ui framework"
+  ]
 }
+  
