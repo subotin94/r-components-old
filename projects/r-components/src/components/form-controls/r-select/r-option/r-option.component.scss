@@ -1,16 +1,25 @@
+@import "../../../../styles/r-theme.scss";
 @import "../../../../styles/variants.scss";
+@import "../../../../styles/mixins.scss";
 
 @mixin option-theme() {
-  r-option {
-    @each $size in r-get-sizes() {
-      &.size-#{$size} {
-        padding: r-theme(select-#{$size}-padding);
+  @each $size in r-get-sizes() {
+    &.size-#{$size} {
+      padding: r-theme(select-#{$size}-padding);
+    }
+  }
+  @each $status in r-get-statuses() {
+    &.status-#{$status} {
+      &:hover {
+        color: r-theme(filled-#{$status}-hover-background-color);
       }
     }
   }
 }
 
 :host {
-  display: block;
+  @include r-component-animation(color);
   @include option-theme();
+  display: block;
+  cursor: pointer;
 }

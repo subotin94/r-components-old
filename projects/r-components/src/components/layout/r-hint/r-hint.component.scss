@@ -1,0 +1,24 @@
+@import "../../../styles/variants.scss";
+@import "../../../styles/r-theme.scss";
+
+@mixin hint-theme() {
+  background-color: r-theme(filled-basic-background-color);
+  border-left: 8px solid;
+  @each $status in r-get-statuses() {
+    &.status-#{$status} {
+      border-left-color: r-theme(filled-#{$status}-border-color);
+    }
+  }
+}
+
+:host {
+  @include hint-theme();
+  display: block;
+  padding: 16px;
+  margin: 24px 0 24px 15px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: r-theme(border-radius-rectangle);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}

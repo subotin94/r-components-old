@@ -22,11 +22,11 @@ const defaultOptions = { params: { direction: '' } };
     </ng-container>
   `,
   animations: [
-  trigger('fadeIn', [
-    transition(':enter', [voidState, animate(100)], defaultOptions),
-    transition(':leave', [animate(100, voidState)], defaultOptions),
-  ])
-],
+    trigger('fadeIn', [
+      transition(':enter', [voidState, animate(100)], defaultOptions),
+      transition(':leave', [animate(100, voidState)], defaultOptions),
+    ])
+  ]
 })
 export class RToastContainerComponent {
 

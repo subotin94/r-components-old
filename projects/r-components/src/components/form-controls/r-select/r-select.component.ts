@@ -22,6 +22,23 @@ import { SubSink } from 'subsink';
 import { ROptionComponent } from './r-option/r-option.component';
 import { RSelectLabelComponent } from './r-select-label/r-select-label.component';
 import { RSubscriptionComponent } from '../../../core/r-subscription-component.interface';
+import { style, trigger, transition, animate, keyframes } from '@angular/animations';
+
+const enterState = style({
+  opacity: '0',
+  transform: 'scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0)',
+  'animation-timing-function': 'cubic-bezier(0.55, 0.055, 0.675, 0.19)',
+  offset: 0,
+});
+
+const enterStateDone = style({
+  opacity: '1',
+  transform: 'scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0)',
+  'animation-timing-function': 'cubic-bezier(0.175, 0.885, 0.32, 1)',
+  offset: 0.03,
+});
+
+const defaultOptions = { params: { direction: '' } };
 
 @Component({
   selector: 'r-select',
@@ -34,11 +51,24 @@ import { RSubscriptionComponent } from '../../../core/r-subscription-component.i
       multi: true
     }
   ],
+  animations: [
+    trigger('rSelectAnimation', [
+      transition(':enter', [animate('150s cubic-bezier(0.55, 0.055, 0.675, 0.19)', keyframes([
+        style({ opacity: 0, transform: 'scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0)', offset: 0 }),
+        style({ opacity: 1, transform: 'scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0)', offset: 0.3 })
+      ]))], defaultOptions),
+      transition(':leave', [animate('150s cubic-bezier(0.55, 0.055, 0.675, 0.19)', keyframes([
+        style({ opacity: 1, transform: 'scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0)', offset: 0 }),
+        style({ opacity: 0, transform: 'scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0)', offset: 0.3 })
+      ]))], defaultOptions)
+    ])
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RSelectComponent<T> implements RSubscriptionComponent, ControlValueAccessor {
 
   readonly subs = new SubSink();
+  rSelectAnimation: any;
 
   @ViewChild('rSelectButton', { read: ElementRef, static: true })
   private readonly button: ElementRef<HTMLButtonElement>;
@@ -60,7 +90,8 @@ export class RSelectComponent<T> implements RSubscriptionComponent, ControlValue
 
   constructor(private readonly cd: ChangeDetectorRef,
               private readonly renderer: Renderer2,
-              private readonly overlay: Overlay) { }
+              private readonly overlay: Overlay) {
+  }
 
   ngAfterViewInit(): void {
     this.options.forEach(option => {
@@ -99,10 +130,10 @@ export class RSelectComponent<T> implements RSubscriptionComponent, ControlValue
 
   private createOverlay(): void {
     const positionStrategy = this.createPositionStrategy();
-    this.ref = this.overlay.create({positionStrategy, hasBackdrop: true, backdropClass: 'cdk-overlay-transparent-backdrop'});
+    this.ref = this.overlay.create({ positionStrategy, hasBackdrop: true, backdropClass: 'cdk-overlay-transparent-backdrop' });
     this.subs.add(this.ref.backdropClick().subscribe(() => {
       this.hide();
-      this.afterClosed.emit({closed: true});
+      this.afterClosed.emit({ closed: true });
     }));
   }
 

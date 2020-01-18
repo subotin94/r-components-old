@@ -11,6 +11,7 @@ import { RBrowserCardModule } from '../../../r-components/src/components/extra/r
 import { RToastModule } from '../../../r-components/src/components/popups/r-toast/r-toast.module';
 import { RInputModule } from '../../../r-components/src/components/form-controls/r-input/r-input.module';
 import { RSelectModule } from '../../../r-components/src/components/form-controls/r-select/r-select.module';
+import { RHintModule } from '../../../r-components/src/components/layout/r-hint/r-hint.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { RSelectModule } from '../../../r-components/src/components/form-control
     RBrowserCardModule,
     RInputModule,
     RToastModule.forRoot(),
-    RSelectModule
+    RSelectModule,
+    RHintModule
   ],
   providers: [
     {

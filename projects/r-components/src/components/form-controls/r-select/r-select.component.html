@@ -19,9 +19,9 @@
   <!-- </nb-icon> -->
 </button>
 
-<div *cdkPortal [style.width.px]="hostWidth" class="options-list-container">
+<div [@rSelectAnimation]="rSelectAnimation" *cdkPortal [style.width.px]="hostWidth" class="options-list-container">
   <!-- [class.full-width]="fullWidth" -->
-  <ul class="options-list">
+  <ul class="options-list disable-text-selection">
     <ng-content select="r-option, r-option-group"></ng-content>
   </ul>
 </div>
