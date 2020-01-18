@@ -22,23 +22,7 @@ import { SubSink } from 'subsink';
 import { ROptionComponent } from './r-option/r-option.component';
 import { RSelectLabelComponent } from './r-select-label/r-select-label.component';
 import { RSubscriptionComponent } from '../../../core/r-subscription-component.interface';
-import { style, trigger, transition, animate, keyframes } from '@angular/animations';
-
-const enterState = style({
-  opacity: '0',
-  transform: 'scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0)',
-  'animation-timing-function': 'cubic-bezier(0.55, 0.055, 0.675, 0.19)',
-  offset: 0,
-});
-
-const enterStateDone = style({
-  opacity: '1',
-  transform: 'scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0)',
-  'animation-timing-function': 'cubic-bezier(0.175, 0.885, 0.32, 1)',
-  offset: 0.03,
-});
-
-const defaultOptions = { params: { direction: '' } };
+import { SELECT_STYLE } from './select.component.style';
 
 @Component({
   selector: 'r-select',
@@ -51,21 +35,12 @@ const defaultOptions = { params: { direction: '' } };
       multi: true
     }
   ],
-  animations: [
-    trigger('rSelectAnimation', [
-      transition(':enter', [animate('150s cubic-bezier(0.55, 0.055, 0.675, 0.19)', keyframes([
-        style({ opacity: 0, transform: 'scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0)', offset: 0 }),
-        style({ opacity: 1, transform: 'scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0)', offset: 0.3 })
-      ]))], defaultOptions),
-      transition(':leave', [animate('150s cubic-bezier(0.55, 0.055, 0.675, 0.19)', keyframes([
-        style({ opacity: 1, transform: 'scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0)', offset: 0 }),
-        style({ opacity: 0, transform: 'scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0)', offset: 0.3 })
-      ]))], defaultOptions)
-    ])
-  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RSelectComponent<T> implements RSubscriptionComponent, ControlValueAccessor {
+
+  @Input() placeholder: string = '';
+  @Output() afterClosed = new EventEmitter();
 
   readonly subs = new SubSink();
   rSelectAnimation: any;
@@ -80,11 +55,9 @@ export class RSelectComponent<T> implements RSubscriptionComponent, ControlValue
 
   @ContentChildren(ROptionComponent, { descendants: true, read: ElementRef }) options: QueryList<ElementRef<HTMLElement>>;
 
-  @Input() placeholder: string = '';
-
-  @Output() afterClosed = new EventEmitter();
-
   selectionModel: ROptionComponent<T>[] = [];
+
+  selectStyle = SELECT_STYLE;
 
   private ref: OverlayRef;
 
@@ -106,9 +79,10 @@ export class RSelectComponent<T> implements RSubscriptionComponent, ControlValue
   show(): void {
     if (this.isHidden) {
       this.attachToOverlay();
+      // TODO @Subbre
       // this.setActiveOption();
       this.cd.markForCheck();
-    }
+    } else {}
   }
 
   hide(): void {
@@ -124,6 +98,8 @@ export class RSelectComponent<T> implements RSubscriptionComponent, ControlValue
       // this.subscribeOnPositionChange();
       // this.createKeyManager();
       // this.subscribeOnOverlayKeys();
+    } else {
+      this.createOverlay();
     }
     this.ref.attach(this.portal);
   }
@@ -138,10 +114,16 @@ export class RSelectComponent<T> implements RSubscriptionComponent, ControlValue
   }
 
   private createPositionStrategy() {
-    return this.overlay
-      .position()
-      // tslint:disable-next-line: deprecation
-      .connectedTo(this.button, { originX: 'start', originY: 'bottom' }, { overlayX: 'start', overlayY: 'top' });
+    const clientRect: any = this.button.nativeElement.getBoundingClientRect();
+    if (((window.innerHeight - Number(String(clientRect.y).split('.')[0])) - 50) < SELECT_STYLE['max-height.px']) {
+      return this.overlay
+        .position()
+        .connectedTo(this.button, { originX: 'end', originY: 'top' }, { overlayX: 'end', overlayY: 'bottom' });
+    } else {
+      return this.overlay
+        .position()
+        .connectedTo(this.button, { originX: 'start', originY: 'bottom' }, { overlayX: 'start', overlayY: 'top' });
+    }
   }
 
   writeValue(obj: any): void {

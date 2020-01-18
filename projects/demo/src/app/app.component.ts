@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, TemplateRef } from '@angular/core';
 import { RToastService } from '../../../r-components/src/public-api';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,12 @@ import { RToastService } from '../../../r-components/src/public-api';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private readonly toastService: RToastService) { }
+  @ViewChild('dialogContent', {static: true})
+  dialogContent: TemplateRef<HTMLElement>;
+  openDialog() {
+    this.dialog.open(this.dialogContent);
+  }
+  constructor(private readonly toastService: RToastService, private dialog: MatDialog) { }
   /**
    * @selectMenus
    */
