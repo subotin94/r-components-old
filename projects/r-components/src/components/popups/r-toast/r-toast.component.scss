@@ -12,8 +12,7 @@
   border-width: 1px;
   border-radius: 4px;
   padding: 16px;
-  // TODO
-  // box-shadow: r-theme();
+  box-shadow: r-theme(default-shadow-1);
   color: r-theme(filled-primary-color);
 
   // font-family: "Open-sans", sans-serif;
@@ -70,15 +69,3 @@
   }
 }
 
-::ng-deep {
-  .cdk-global-overlay-wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  .r-dark {
-    r-toast {
-      // box-shadow: $dark-shadow !important;
-    }
-  }
-}

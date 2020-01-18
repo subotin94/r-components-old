@@ -3,6 +3,7 @@
   "author": "Nemanja Subotin",
   "version": "0.0.0",
   "scripts": {
+    "components": "ng build r-components --watch",
     "ng": "ng",
     "deploy": "rimraf dist && ng build --prod && ng build r-components && firebase deploy",
     "start": "ng serve",
@@ -53,6 +54,7 @@
     "express": "^4.15.2",
     "ngx-highlightjs": "^4.0.2",
     "rxjs": "~6.4.0",
+    "subsink": "^1.0.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

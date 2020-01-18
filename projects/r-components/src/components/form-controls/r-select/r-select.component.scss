@@ -1,0 +1,44 @@
+@import "../../../styles/r-theme.scss";
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variants.scss";
+
+@keyframes r-menu-animation {
+  from {
+    opacity: 0;
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  3% {
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+
+:host {
+  button {
+    min-width: 191px;
+  }
+}
+.options-list-container {
+  animation: r-menu-animation 0.15s ease-in;
+  min-width: 191px;
+  background-color: r-theme(select-options-list-background-color);
+  box-shadow: r-theme(default-shadow-1);
+  border-radius: r-theme(border-radius-rectangle);
+  .options-list {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+::ng-deep {
+  @each $size in r-get-sizes() {
+    r-select {
+      &.size-#{$size} {
+        padding: r-theme(select-#{$size}-padding);
+      }
+    }
+  }
+}

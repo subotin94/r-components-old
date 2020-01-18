@@ -8,7 +8,7 @@ $r-theme-map: ();
 }
 
 @function r-get-maps() {
-  @return $global-map, $status-map, $button-map, $default-map, $input-map;
+  @return $global-map, $status-map, $button-map, $default-map, $input-map, $select-map;
 }
 
 $global-map: (
@@ -93,6 +93,18 @@ $input-map: (
   input-large-font-weight: 600,
   input-large-line-height: 20px,
   input-large-padding: 11px 18px,
+);
+
+// TODO convert rem to px
+$select-map: (
+  select-small-padding: 3px 18px,
+  select-medium-padding: 7px 18px,
+  select-large-padding: 11px 18px,
+  select-options-list-background-color: $white
+  // select-options-list-status-primary-color: $primary,
+  // select-options-list-status-info-color: $info,
+  // select-options-list-status-danger-color: $danger,
+  // select-options-list-status-primary-color: $primary,
 );
 
 @each $map in r-get-maps() {

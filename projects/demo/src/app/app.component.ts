@@ -9,6 +9,12 @@ import { RToastService } from '../../../r-components/src/public-api';
 export class AppComponent {
   constructor(private readonly toastService: RToastService) { }
   /**
+   * @selectMenus
+   */
+  onSelectedChange($event) {
+    console.log($event);
+  }
+  /**
    * @toasters
    */
   dangerToast() {

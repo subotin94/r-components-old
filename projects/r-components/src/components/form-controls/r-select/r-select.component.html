@@ -1,1 +1,27 @@
-<p>r-select works!</p>
+<!-- [disabled]="disabled"
+        [ngClass]="selectButtonClasses"
+        (blur)="trySetTouched()" -->
+
+<button #rSelectButton r-button (click)="show()" (keydown.arrowDown)="show()" (keydown.arrowUp)="show()"
+  class="select-button" type="button">
+
+  <ng-container *ngIf="selectionModel.length; else placeholderTemplate">
+    <ng-container *ngIf="customLabel; else defaultSelectionTemplate">
+      <ng-content select="nb-select-label"></ng-content>
+    </ng-container>
+
+    <ng-template #defaultSelectionTemplate>{{ selectionView }}</ng-template>
+  </ng-container>
+
+  <ng-template #placeholderTemplate>{{ placeholder }}</ng-template>
+
+  <!-- <nb-icon icon="chevron-down-outline" pack="nebular-essentials" (click)="disabled && $event.stopPropagation()" aria-hidden="true"> -->
+  <!-- </nb-icon> -->
+</button>
+
+<div *cdkPortal [style.width.px]="hostWidth" class="options-list-container">
+  <!-- [class.full-width]="fullWidth" -->
+  <ul class="options-list">
+    <ng-content select="r-option, r-option-group"></ng-content>
+  </ul>
+</div>

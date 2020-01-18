@@ -10,6 +10,7 @@ import { RIconModule } from '../../../r-components/src/components/icons/r-icon/r
 import { RBrowserCardModule } from '../../../r-components/src/components/extra/r-browser-card/browser-card';
 import { RToastModule } from '../../../r-components/src/components/popups/r-toast/r-toast.module';
 import { RInputModule } from '../../../r-components/src/components/form-controls/r-input/r-input.module';
+import { RSelectModule } from '../../../r-components/src/components/form-controls/r-select/r-select.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RInputModule } from '../../../r-components/src/components/form-controls
     RIconModule,
     RBrowserCardModule,
     RInputModule,
-    RToastModule.forRoot()
+    RToastModule.forRoot(),
+    RSelectModule
   ],
   providers: [
     {

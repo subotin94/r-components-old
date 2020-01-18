@@ -8,7 +8,7 @@
     @include r-component-animation(box-shadow, border);
     color: r-theme(filled-basic-color);
     background-color: r-theme(filled-basic-background-color);
-    border: r-theme(filled-border);
+    border: r-theme(filled-border-2);
     margin: 6px;
     &:active, &:focus {
       outline: none;
