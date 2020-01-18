@@ -1,8 +1,10 @@
 @import "./_r-button.theme.scss";
 @import "./_r-button-filled.scss";
+@import "./_r-button-outline.scss";
 
 :host {
   @include r-button-theme();
+  @include button-outline();
   @include button-filled();
   @include r-component-animation(background-color, border-color, box-shadow, color);
   appearance: none;

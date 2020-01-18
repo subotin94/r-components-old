@@ -1,0 +1,35 @@
+@import "../../../styles/variants.scss";
+@import "../../../styles/r-theme.scss";
+@import "../../../styles/mixins.scss";
+
+@mixin button-outline() {
+  &[r-button].appearance-outline, &[r-icon-button].appearance-outline {
+    @each $status in r-get-statuses() {
+      &.status-#{$status} {
+        background-color: r-theme(filled-basic-background-color);
+        border: r-theme(filled-border-2);
+        border-color: r-theme(filled-#{$status}-border-color);
+        color: r-theme(filled-#{$status}-border-color);
+
+        &:hover {
+          border-color: r-theme(filled-#{$status}-hover-border-color);
+          color: r-theme(filled-#{$status}-hover-border-color);
+        }
+
+        &:active {
+          border-color: r-theme(filled-#{$status}-active-border-color);
+          color: r-theme(filled-#{$status}-active-border-color);
+        }
+      }
+    }
+    &:disabled {
+      border-color: r-theme(filled-disabled-background-color);
+      color: r-theme(filled-disabled-color);
+      cursor: default;
+      &:hover {
+        border-color: r-theme(filled-disabled-background-color);
+        color: r-theme(filled-disabled-color);
+      }
+    }
+  }
+}

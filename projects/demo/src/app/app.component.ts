@@ -95,6 +95,13 @@ export class AppComponent {
     <button r-button status="info">Info</button>
     <button r-button status="success">Success</button>
   `;
+  outlineStatusButtons = `
+    <button r-button appearance="outline" status="danger">Danger</button>
+    <button r-button appearance="outline" status="warning">Warning</button>
+    <button r-button appearance="outline" status="primary">Primary</button>
+    <button r-button appearance="outline" status="info">Info</button>
+    <button r-button appearance="outline" status="success">Success</button>
+  `;
   iconButtons = `
     <button r-icon-button icon="add" status="primary">Add</button>
     <button r-icon-button icon="clear" status="danger"></button>
@@ -109,6 +116,7 @@ export class AppComponent {
   disabledButtons = `
     <button r-button disabled="true">Disabled</button>
     <button r-icon-button icon="add" status="primary" disabled="true"></button>
+    <button r-button appearance="outline" disabled="true" status="danger">Disabled</button>
   `;
 
   /**

@@ -114,6 +114,20 @@
         </r-browser-card>
       </dd>
       <dt>
+        <h3>Outline Status Buttons:</h3>
+      </dt>
+      <dd>
+        <button r-button appearance="outline" status="danger">Danger</button>
+        <button r-button appearance="outline" status="warning">Warning</button>
+        <button r-button appearance="outline" status="primary">Primary</button>
+        <button r-button appearance="outline" status="info">Info</button>
+        <button r-button appearance="outline" status="success">Success</button>
+        <!-- TODO basic button -->
+        <r-browser-card>
+          <pre><code [highlight]="outlineStatusButtons"></code></pre>
+        </r-browser-card>
+      </dd>
+      <dt>
         <h3>Icon Buttons:</h3>
       </dt>
       <dd>
@@ -145,6 +159,7 @@
       <dd>
         <button r-button disabled="true">Disabled</button>
         <button r-icon-button icon="add" status="primary" disabled="true"></button>
+        <button r-button appearance="outline" disabled="true" status="danger">Disabled</button>
         <r-browser-card>
           <pre><code [highlight]="disabledButtons"></code></pre>
         </r-browser-card>
