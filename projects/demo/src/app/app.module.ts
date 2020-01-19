@@ -13,6 +13,7 @@ import { RToastModule } from '../../../r-components/src/components/popups/r-toas
 import { RInputModule } from '../../../r-components/src/components/form-controls/r-input/r-input.module';
 import { RSelectModule } from '../../../r-components/src/components/form-controls/r-select/r-select.module';
 import { RHintModule } from '../../../r-components/src/components/layout/r-hint/r-hint.module';
+import { RCheckboxModule } from '../../../r-components/src/components/form-controls/r-checkbox/r-checkbox.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { RHintModule } from '../../../r-components/src/components/layout/r-hint/
     RToastModule.forRoot(),
     RSelectModule,
     RHintModule,
+    RCheckboxModule,
     MatDialogModule
   ],
   providers: [

@@ -8,7 +8,7 @@ $r-theme-map: ();
 }
 
 @function r-get-maps() {
-  @return $global-map, $status-map, $button-map, $default-map, $input-map, $select-map;
+  @return $global-map, $status-map, $button-map, $default-map, $input-map, $select-map, $checkboox-map;
 }
 
 $global-map: (
@@ -105,6 +105,17 @@ $select-map: (
   // select-options-list-status-info-color: $info,
   // select-options-list-status-danger-color: $danger,
   // select-options-list-status-primary-color: $primary,
+);
+
+$checkboox-map: (
+  checkbox-width: 1.125rem,
+  checkbox-height: 1.125rem,
+  checkbox-border-style: solid,
+  checkbox-border-width: 1px,
+  checkbox-border-radius: 4px,
+  checkbox-outline-width: 4px,
+  
+  checkbox-padding: 0,
 );
 
 @each $map in r-get-maps() {

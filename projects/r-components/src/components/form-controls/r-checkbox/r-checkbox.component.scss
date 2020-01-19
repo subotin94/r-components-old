@@ -1,0 +1,151 @@
+@import '../../../styles/r-theme.scss';
+@import '../../../styles/variants.scss';
+@import '../../../styles/mixins.scss';
+
+
+@mixin checkbox-theme() {
+  &r-checkbox {
+    .custom-checkbox {
+      width: r-theme(checkbox-width);
+      height: r-theme(checkbox-height);
+      border-style: r-theme(checkbox-border-style);
+      border-width: r-theme(checkbox-border-width);
+      border-radius: r-theme(checkbox-border-radius);
+      position: relative;
+    }
+
+    .native-input:focus:not(:checked) + .custom-checkbox {
+      @include r-outline(r-theme(checkbox-outline-width), r-theme(outline-color), (inset-shadow: true));
+    }
+    .native-input:focus:checked + .custom-checkbox {
+      @include r-outline(r-theme(checkbox-outline-width), r-theme(outline-color));
+    }
+
+    r-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+    }
+
+    .text {
+      font-family: r-theme(checkbox-text-font-family);
+      font-size: r-theme(checkbox-text-font-size);
+      font-weight: r-theme(checkbox-text-font-weight);
+      line-height: r-theme(checkbox-text-line-height);
+
+     //  &:not(:empty) {
+     //    @include nb-ltr(padding-left, r-theme(checkbox-text-space));
+     //    @include nb-rtl(padding-right, r-theme(checkbox-text-space));
+     //  }
+    }
+
+  @each $status in r-get-statuses() {
+    @include checkbox-status($status);
+  }
+  }
+}
+
+@mixin checkbox-status($status: '') {
+  &.status-#{$status} {
+    .custom-checkbox {
+      background-color: r-theme(filled-basic-background-color);
+      border-color: r-theme(filled-#{$status}-background-color);
+    }
+
+   //  .text {
+   //    color: r-theme(checkbox-#{$status}-text-color);
+   //  }
+
+    .custom-checkbox.checked {
+      background-color: r-theme(filled-#{$status}-background-color);
+      border-color: r-theme(filled-#{$status}-border-color);
+
+     //  r-icon {
+     //    color: r-theme(checkbox-#{$status}-checked-checkmark-color);
+     //  }
+    }
+
+   // TODO
+   //  .custom-checkbox.indeterminate {
+   //    background-color: r-theme(checkbox-#{$status}-indeterminate-background-color);
+   //    border-color: r-theme(checkbox-#{$status}-indeterminate-border-color);
+
+   //    nb-icon {
+   //      color: r-theme(checkbox-#{$status}-indeterminate-checkmark-color);
+   //    }
+   //  }
+
+    .native-input:enabled:focus + .custom-checkbox {
+      background-color: r-theme(filled-#{$status}-active-background-color);
+      border-color: r-theme(filled-#{$status}-active-border-color);
+
+      &.indeterminate,
+      &.checked {
+        background-color: r-theme(filled-#{$status}-active-background-color);
+        border-color: r-theme(filled-#{$status}-active-border-color);
+      }
+    }
+
+   //  .custom-checkbox:hover {
+   //    background-color: r-theme(checkbox-#{$status}-hover-background-color);
+   //    border-color: r-theme(checkbox-#{$status}-hover-border-color);
+
+   //    &.indeterminate,
+   //    &.checked {
+   //      background-color: r-theme(checkbox-#{$status}-hover-checked-background-color);
+   //      border-color: r-theme(checkbox-#{$status}-hover-checked-border-color);
+   //    }
+   //  }
+
+   //  .native-input:enabled:active + .custom-checkbox {
+   //    background-color: r-theme(checkbox-#{$status}-active-background-color);
+   //    border-color: r-theme(checkbox-#{$status}-active-border-color);
+
+   //    &.indeterminate,
+   //    &.checked {
+   //      background-color: r-theme(checkbox-#{$status}-active-checked-background-color);
+   //      border-color: r-theme(checkbox-#{$status}-active-checked-border-color);
+   //    }
+   //  }
+
+   //  .native-input:disabled {
+   //    & + .custom-checkbox {
+   //      background-color: r-theme(checkbox-#{$status}-disabled-background-color);
+   //      border-color: r-theme(checkbox-#{$status}-disabled-border-color);
+
+   //      nb-icon {
+   //        color: r-theme(checkbox-#{$status}-disabled-checkmark-color);
+   //      }
+   //    }
+   //    & ~ .text {
+   //      color: r-theme(checkbox-#{$status}-disabled-text-color);
+   //    }
+   //    &:indeterminate + .custom-checkbox,
+   //    &:checked + .custom-checkbox {
+   //      background-color: r-theme(checkbox-#{$status}-disabled-checked-background-color);
+   //    }
+   //  }
+  }
+}
+
+:host {
+  @include checkbox-theme();
+  .label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    min-height: inherit;
+  }
+
+  .custom-checkbox {
+    flex-shrink: 0;
+    @include r-component-animation(background-color, border, box-shadow);
+  }
+
+  .text {
+    transition: color 0.15s ease-in;
+  }
+}
