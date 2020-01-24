@@ -1,0 +1,24 @@
+:host {
+  display: inline-flex;
+  flex-direction: row;
+  padding:17px;
+  .r-card-avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .r-card-header-text {
+    margin: 0 16px;
+    [r-card-title] {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    [r-card-subtitle] {
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+  }
+}

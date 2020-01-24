@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'lib-r-card',
+  selector: 'r-card',
+  encapsulation: ViewEncapsulation.None,
   templateUrl: './r-card.component.html',
   styleUrls: ['./r-card.component.scss']
 })

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-r-layout',
-  templateUrl: './r-layout.component.html',
+  selector: 'r-layout',
+  template: `<ng-content></ng-content>`,
   styleUrls: ['./r-layout.component.scss']
 })
 export class RLayoutComponent implements OnInit {

@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RSidenavComponent } from './r-sidenav.component';
-
-
+// import { RSidenavComponent } from './r-sidenav.component';
 
 @NgModule({
-  declarations: [RSidenavComponent],
+  // declarations: [RSidenavComponent],
   imports: [
     CommonModule
   ]

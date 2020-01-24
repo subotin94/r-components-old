@@ -14,6 +14,8 @@ import { RInputModule } from '../../../r-components/src/components/form-controls
 import { RSelectModule } from '../../../r-components/src/components/form-controls/r-select/r-select.module';
 import { RHintModule } from '../../../r-components/src/components/layout/r-hint/r-hint.module';
 import { RCheckboxModule } from '../../../r-components/src/components/form-controls/r-checkbox/r-checkbox.module';
+import { RLayoutModule } from '../../../r-components/src/components/layout/r-layout/r-layout.module';
+import { RCardModule } from '../../../r-components/card';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { RCheckboxModule } from '../../../r-components/src/components/form-contr
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    RLayoutModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HighlightModule,
@@ -33,7 +36,8 @@ import { RCheckboxModule } from '../../../r-components/src/components/form-contr
     RSelectModule,
     RHintModule,
     RCheckboxModule,
-    MatDialogModule
+    MatDialogModule,
+    RCardModule
   ],
   providers: [
     {

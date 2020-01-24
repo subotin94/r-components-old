@@ -1,11 +1,3 @@
-/**
- * @license
- * Copyright Google LLC All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -20,8 +12,8 @@ import {
   ElementRef,
   NgZone,
 } from '@angular/core';
-import {RDrawer, RDrawerContainer, RDrawerContent, R_DRAWER_CONTAINER} from './drawer';
-import {rDrawerAnimations} from './drawer-animations';
+import {MatDrawer, MatDrawerContainer, MatDrawerContent, MAT_DRAWER_CONTAINER} from '../drawer';
+import {matDrawerAnimations} from '../drawer-animations';
 import {
   coerceBooleanProperty,
   coerceNumberProperty,
@@ -30,20 +22,20 @@ import {ScrollDispatcher} from '@angular/cdk/scrolling';
 
 
 @Component({
-  selector: 'r-sidenav-content',
+  selector: 'mat-sidenav-content',
   template: '<ng-content></ng-content>',
   host: {
-    'class': 'r-drawer-content r-sidenav-content',
+    'class': 'mat-drawer-content mat-sidenav-content',
     '[style.margin-left.px]': '_container._contentMargins.left',
     '[style.margin-right.px]': '_container._contentMargins.right',
   },
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
-export class RSidenavContent extends RDrawerContent {
+export class MatSidenavContent extends MatDrawerContent {
   constructor(
       changeDetectorRef: ChangeDetectorRef,
-      @Inject(forwardRef(() => RSidenavContainer)) container: RSidenavContainer,
+      @Inject(forwardRef(() => MatSidenavContainer)) container: MatSidenavContainer,
       elementRef: ElementRef<HTMLElement>,
       scrollDispatcher: ScrollDispatcher,
       ngZone: NgZone) {
@@ -53,7 +45,7 @@ export class RSidenavContent extends RDrawerContent {
 
 
 @Component({
-  selector: 'r-sidenav',
+  selector: 'mat-sidenav',
   exportAs: 'matSidenav',
   templateUrl: 'drawer.html',
   animations: [matDrawerAnimations.transformDrawer],
@@ -74,7 +66,7 @@ export class RSidenavContent extends RDrawerContent {
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
-export class RSidenav extends RDrawer {
+export class MatSidenav extends MatDrawer {
   /** Whether the sidenav is fixed in the viewport. */
   @Input()
   get fixedInViewport(): boolean { return this._fixedInViewport; }
@@ -107,32 +99,33 @@ export class RSidenav extends RDrawer {
   static ngAcceptInputType_opened;
 }
 
+
 @Component({
-  selector: 'r-sidenav-container',
+  selector: 'mat-sidenav-container',
   exportAs: 'matSidenavContainer',
   templateUrl: 'sidenav-container.html',
   styleUrls: ['drawer.css'],
   host: {
-    'class': 'r-drawer-container r-sidenav-container',
-    '[class.r-drawer-container-explicit-backdrop]': '_backdropOverride',
+    'class': 'mat-drawer-container mat-sidenav-container',
+    '[class.mat-drawer-container-explicit-backdrop]': '_backdropOverride',
   },
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   providers: [{
     provide: MAT_DRAWER_CONTAINER,
-    useExisting: RSidenavContainer
+    useExisting: MatSidenavContainer
   }]
 
 })
-export class RSidenavContainer extends RDrawerContainer {
-  @ContentChildren(RSidenav, {
+export class MatSidenavContainer extends MatDrawerContainer {
+  @ContentChildren(MatSidenav, {
     // We need to use `descendants: true`, because Ivy will no longer match
     // indirect descendants if it's left as false.
     descendants: true
   })
-  _allDrawers: QueryList<RSidenav>;
+  _allDrawers: QueryList<MatSidenav>;
 
-  @ContentChild(RSidenavContent, {static: false}) _content: RSidenavContent;
+  @ContentChild(MatSidenavContent, {static: false}) _content: MatSidenavContent;
 
   static ngAcceptInputType_autosize;
   static ngAcceptInputType_hasBackdrop;
