@@ -1,6 +1,7 @@
 import { Component, ViewChild, TemplateRef } from '@angular/core';
 import { RToastService } from '../../../r-components/src/public-api';
 import { MatDialog } from '@angular/material/dialog';
+import { RSidenavComponent } from '../../../r-components/src/components/navigation/r-sidenav/r-sidenav.component';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,24 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  ngOnInit() {
+    console.log(this.sidenav);
+    this.sidenav.openedChange.subscribe(console.log);
+  }
+
+  /**
+   * @sidenav
+   */
+  @ViewChild(RSidenavComponent, { static: true })
+  sidenav: RSidenavComponent;
+  get isMobile() {
+    return window.innerWidth < 768;
+  }
+  async toggle() {
+    await this.sidenav.toggle();
+    console.log('Done');
+  }
+
   @ViewChild('dialogContent', {static: true})
   dialogContent: TemplateRef<HTMLElement>;
   openDialog() {

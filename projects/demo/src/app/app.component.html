@@ -1,10 +1,14 @@
 <r-layout>
-  <r-card>
+  <r-sidenav [opened]="!isMobile" [mode]="isMobile ? 'over' : 'push'">caooo</r-sidenav>
+  <button r-button (click)="toggle()">Toggle</button>
+  <button r-button (click)="sidenav.close()">Close</button>
+  <button r-button (click)="sidenav.open()">Open</button>
+  <!-- <r-card>
     <r-card-header>
       <img r-card-avatar src="https://material.angular.io/assets/img/examples/shiba1.jpg">
     </r-card-header>
-  </r-card>
-</r-layout> 
+  </r-card> -->
+</r-layout>
 
 <!-- <r-checkbox>Check me!</r-checkbox>
 

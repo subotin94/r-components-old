@@ -1,0 +1,16 @@
+$default-width: 256px !default;
+
+:host {
+  display: inline-block;
+  width: $default-width;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  transition: margin 0.4s ease-in;
+  -webkit-transition: 0.4s ease;
+  -o-transition: 0.4s ease;
+  &.over {
+    position: absolute;
+    z-index: 1001;
+  }
+}
