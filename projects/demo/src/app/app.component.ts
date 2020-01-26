@@ -2,6 +2,7 @@ import { Component, ViewChild, TemplateRef } from '@angular/core';
 import { RToastService } from '../../../r-components/src/public-api';
 import { MatDialog } from '@angular/material/dialog';
 import { RSidenavComponent } from '../../../r-components/src/components/navigation/r-sidenav/r-sidenav.component';
+import { RNavbarComponent } from 'projects/r-components/src/components/navigation/r-navbar/r-navbar.component';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +27,12 @@ export class AppComponent {
     await this.sidenav.toggle();
     console.log('Done');
   }
+
+  /**
+   * @navbar
+   */
+  @ViewChild(RNavbarComponent, { static: true })
+  navbar: RNavbarComponent;
 
   @ViewChild('dialogContent', {static: true})
   dialogContent: TemplateRef<HTMLElement>;

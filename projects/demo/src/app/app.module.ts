@@ -17,6 +17,7 @@ import { RCheckboxModule } from '../../../r-components/src/components/form-contr
 import { RLayoutModule } from '../../../r-components/src/components/layout/r-layout/r-layout.module';
 import { RCardModule } from '../../../r-components/card';
 import { RSidenavModule } from '../../../r-components/src/components/navigation/r-sidenav/r-sidenav.module';
+import { RNavbarModule } from 'projects/r-components/src/components/navigation/r-navbar/r-navbar.module';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { RSidenavModule } from '../../../r-components/src/components/navigation/
     RCheckboxModule,
     MatDialogModule,
     RCardModule,
-    RSidenavModule
+    RSidenavModule,
+    RNavbarModule
   ],
   providers: [
     {

@@ -1,4 +1,8 @@
-<r-layout>
+
+ <r-navbar fixed>
+   Cao vevejice
+ </r-navbar>
+ <r-layout>
   <r-sidenav [opened]="!isMobile" [mode]="isMobile ? 'over' : 'push'">caooo</r-sidenav>
   <button r-button (click)="toggle()">Toggle</button>
   <button r-button (click)="sidenav.close()">Close</button>

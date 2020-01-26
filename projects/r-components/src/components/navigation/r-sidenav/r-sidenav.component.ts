@@ -125,7 +125,6 @@ export class RSidenavComponent implements RSubscriptionComponent {
 
   @HostBinding('style.margin-left.px')
   get marginLeft(): number {
-    console.log('tu')
     return this.opened ? 0 : -this.width;
   }
 
