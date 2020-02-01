@@ -39,6 +39,7 @@ import { RNavbarModule } from 'projects/r-components/src/components/navigation/r
     RHintModule,
     RCheckboxModule,
     MatDialogModule,
+    RNavbarModule,
     RCardModule,
     RSidenavModule,
     RNavbarModule

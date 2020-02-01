@@ -7,6 +7,10 @@ $default-height: 76px !default;
   background-color: black;
   color: white;
   padding: 0 47px;
+  .r-navbar-fixed-spacer {
+    height: $default-height;
+    width: 100%;
+  }
   &.r-navbar-fixed {
     position: fixed;
     top: 0;
