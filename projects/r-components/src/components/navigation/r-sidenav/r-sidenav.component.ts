@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, HostListener, ElementRef } from '@angular/core';
+import { Component, HostBinding, Input, HostListener, ElementRef, ContentChild } from '@angular/core';
 import { Overlay } from '@angular/cdk/overlay';
 import { Subject } from 'rxjs';
 import { SubSink } from 'subsink';
@@ -95,6 +95,14 @@ export class RSidenavComponent extends RSidenavContainerComponent implements RSu
     if (this.mode === 'over' && this.opened) {
       super.attachToOverlay();
     }
+  }
+
+
+  @HostBinding('style.margin-top.px')
+  get marginTop(): number {
+    return 76;
+    // console.log(super.sidenavContentRef && super.sidenavContentRef.navbar.fixed)
+    // return super.sidenavContentRef && super.sidenavContentRef.navbar.fixed && 76;
   }
 
   private _initialValue = -this.width;

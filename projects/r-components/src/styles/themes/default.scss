@@ -14,6 +14,12 @@ $default-shadow-1: $shadow rgba($default-color-6, 0.1) !default;
 $default-shadow-2: $shadow rgba($default-color-6, 0.2) !default;
 
 $default-map: (
+  default-color-1: $default-color-1,
+  default-color-2: $default-color-2,
+  default-color-3: $default-color-3,
+  default-color-4: $default-color-4,
+  default-color-5: $default-color-5,
+  default-color-6: $default-color-6,
   filled-basic-background-color: $default-color-5,
   filled-basic-border-color: $default-color-2,
   filled-basic-disabled-background-color: $default-color-5,

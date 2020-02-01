@@ -1,16 +1,15 @@
+@import "../../../styles/r-theme.scss";
+
 $default-height: 76px !default;
 
 :host {
   display: flex;
   align-items: center;
   height: $default-height;
-  background-color: black;
-  color: white;
+  background-color: r-theme(default-color-1);
+  box-shadow: r-theme(default-shadow-1);
+  color: r-theme(default-color-6);
   padding: 0 47px;
-  .r-navbar-fixed-spacer {
-    height: $default-height;
-    width: 100%;
-  }
   &.r-navbar-fixed {
     position: fixed;
     top: 0;

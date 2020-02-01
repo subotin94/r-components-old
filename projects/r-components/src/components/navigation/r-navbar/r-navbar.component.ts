@@ -8,13 +8,8 @@ import { Component, OnInit, ElementRef, Input, HostBinding } from '@angular/core
 @Component({
   selector: 'r-navbar',
   template: `
-    <ng-container *ngIf="fixed">
-      <div class="r-navbar-fixed-spacer"></div>
-    </ng-container>
-    <nav>
-      <ng-content select="r-sidenav-actions"></ng-content>
-      <ng-content></ng-content>
-    </nav>
+    <ng-content select="r-sidenav-actions"></ng-content>
+    <ng-content></ng-content>
   `,
   styleUrls: ['./r-navbar.component.scss']
 })

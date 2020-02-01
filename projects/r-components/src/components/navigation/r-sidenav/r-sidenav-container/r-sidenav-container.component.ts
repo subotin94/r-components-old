@@ -1,9 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ContentChild } from '@angular/core';
 import { OverlayRef, Overlay, GlobalPositionStrategy } from '@angular/cdk/overlay';
 import { CdkPortal } from '@angular/cdk/portal';
 import { SubSink } from 'subsink';
 
 import { RSubscriptionComponent } from '../../../../core/r-subscription-component.interface';
+import { RSidenavContentComponent } from '../r-sidenav-content/r-sidenav-content.component';
+import { Subject } from 'rxjs';
 
 let _portal = null;
 
@@ -19,12 +21,14 @@ export class RSidenavContainerComponent implements RSubscriptionComponent {
   @ViewChild(CdkPortal, { static: true })
   protected portal: CdkPortal;
 
+  @ContentChild(RSidenavContentComponent, { static: true })
+  private _sidenavContentRef: RSidenavContentComponent;
+
   protected ref: OverlayRef;
 
   constructor(protected readonly overlay: Overlay) { }
 
   ngOnInit(): void {
-    console.log(this.portal);
     _portal = this.portal;
   }
 
@@ -50,8 +54,19 @@ export class RSidenavContainerComponent implements RSubscriptionComponent {
     }));
   }
 
+  $ref = new Subject();
+  ngAfterContentInit() {
+    const ref = this.getSidenavContentRef();
+    console.log(ref);
+    this.$ref.next(ref);
+  }
+
   private createPositionStrategy(): GlobalPositionStrategy {
     return new GlobalPositionStrategy().top().left().right().bottom();
+  }
+
+  protected getSidenavContentRef(): RSidenavContentComponent {
+    return this._sidenavContentRef;
   }
 
   ngOnDestroy(): void {

@@ -1,11 +1,14 @@
+@import "../../../styles/r-theme.scss";
+
 $default-width: 256px !default;
 
 :host {
   display: block;
-  width: $default-width;
-  height: 100%;
+  min-width: $default-width;
+  margin-top: 76px;
   overflow: auto;
-  background-color: black;
+  background-color: r-theme(default-color-1);
+  box-shadow: r-theme(default-shadow-1);
   transition: margin 0.4s ease-in;
   -webkit-transition: 0.4s ease;
   -o-transition: 0.4s ease;

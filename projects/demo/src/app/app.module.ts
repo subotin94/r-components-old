@@ -18,10 +18,12 @@ import { RLayoutModule } from '../../../r-components/src/components/layout/r-lay
 import { RCardModule } from '../../../r-components/card';
 import { RSidenavModule } from '../../../r-components/src/components/navigation/r-sidenav/r-sidenav.module';
 import { RNavbarModule } from 'projects/r-components/src/components/navigation/r-navbar/r-navbar.module';
+import { RLogoComponent } from './components/icons/r-logo.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RLogoComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
