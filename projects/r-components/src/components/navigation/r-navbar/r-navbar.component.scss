@@ -1,0 +1,18 @@
+$default-height: 76px !default;
+
+:host {
+  display: flex;
+  align-items: center;
+  height: $default-height;
+  background-color: black;
+  color: white;
+  padding: 0 47px;
+  &.r-navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    // `r-sidenav` has `z-index: 1001`
+    z-index: 1002;
+  }
+}
