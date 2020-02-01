@@ -19,6 +19,7 @@ import { RCardModule } from '../../../r-components/card';
 import { RSidenavModule } from '../../../r-components/src/components/navigation/r-sidenav/r-sidenav.module';
 import { RNavbarModule } from 'projects/r-components/src/components/navigation/r-navbar/r-navbar.module';
 import { RLogoComponent } from './components/icons/r-logo.component';
+import { DonateModule } from './pages/donate/donate.module';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { RLogoComponent } from './components/icons/r-logo.component';
     RNavbarModule,
     RCardModule,
     RSidenavModule,
-    RNavbarModule
+    RNavbarModule,
+    DonateModule
   ],
   providers: [
     {

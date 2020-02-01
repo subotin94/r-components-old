@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DonateComponent } from './donate.component';
 
-
-
 @NgModule({
-  declarations: [DonateComponent],
+  declarations: [
+    DonateComponent
+  ],
   imports: [
     CommonModule
   ]
