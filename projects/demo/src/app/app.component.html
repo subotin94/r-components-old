@@ -1,8 +1,12 @@
 <r-layout>
-  <r-sidenav [opened]="!isMobile" [mode]="isMobile ? 'over' : 'push'">caooo</r-sidenav>
-  <button r-button (click)="toggle()">Toggle</button>
-  <button r-button (click)="sidenav.close()">Close</button>
-  <button r-button (click)="sidenav.open()">Open</button>
+  <r-sidenav-container>
+    <r-sidenav [opened]="!isMobile" [mode]="isMobile ? 'over' : 'push'">caooo</r-sidenav>
+    <r-sidenav-content>
+      <button r-button (click)="toggle()">Toggle</button>
+      <button r-button (click)="sidenav.close()">Close</button>
+      <button r-button (click)="sidenav.open()">Open</button>
+    </r-sidenav-content>
+  </r-sidenav-container>
   <!-- <r-card>
     <r-card-header>
       <img r-card-avatar src="https://material.angular.io/assets/img/examples/shiba1.jpg">

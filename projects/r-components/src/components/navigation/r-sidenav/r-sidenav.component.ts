@@ -1,17 +1,14 @@
-import { Component, HostBinding, Input, HostListener, ElementRef, Renderer2, ViewChild, Host, Inject } from '@angular/core';
-import { Overlay, OverlayRef, GlobalPositionStrategy } from '@angular/cdk/overlay';
+import { Component, HostBinding, Input, HostListener, ElementRef } from '@angular/core';
+import { Overlay } from '@angular/cdk/overlay';
 import { Subject } from 'rxjs';
 import { SubSink } from 'subsink';
 
 import { RSidenavMode } from './sidenav';
 import { RSubscriptionComponent } from '../../../core/r-subscription-component.interface';
-import { CdkPortal } from '@angular/cdk/portal';
-import { DOCUMENT } from '@angular/common';
+import { RSidenavContainerComponent } from './r-sidenav-container/r-sidenav-container.component';
 
 /**
  * @todo
- * @important
- * @note
  * @subbre
  * Move overlay to container component and attach r-sidenav to component portal
  */
@@ -20,7 +17,7 @@ import { DOCUMENT } from '@angular/common';
   templateUrl: './r-sidenav.component.html',
   styleUrls: ['./r-sidenav.component.scss']
 })
-export class RSidenavComponent implements RSubscriptionComponent {
+export class RSidenavComponent extends RSidenavContainerComponent implements RSubscriptionComponent {
 
   readonly subs = new SubSink();
   openedChange: Subject<boolean> = new Subject();
@@ -43,15 +40,10 @@ export class RSidenavComponent implements RSubscriptionComponent {
   }
   private _opened: boolean = false;
 
-  private ref: OverlayRef;
-
-  @ViewChild(CdkPortal, { static: false })
-  private readonly portal: CdkPortal;
-
-  constructor(@Inject(DOCUMENT) private readonly document: Document,
-              private readonly hostRef: ElementRef<HTMLElement>,
-              private readonly renderer: Renderer2,
-              private readonly overlay: Overlay) { }
+  constructor(readonly overlay: Overlay,
+              private readonly hostRef: ElementRef<HTMLElement>) {
+    super(overlay);
+  }
 
   ngOnInit(): void {
     this.setWidth();
@@ -62,6 +54,12 @@ export class RSidenavComponent implements RSubscriptionComponent {
   }
 
   toggle(): Promise<void> {
+    /**
+     * @todo
+     * @subbre
+     * This also has to check overlay reference because
+     * this method can also close the drawer
+     */
     return this._toggle();
   }
 
@@ -70,8 +68,8 @@ export class RSidenavComponent implements RSubscriptionComponent {
   }
 
   close(): Promise<void> {
-    if (this.ref) {
-      this.ref.dispose();
+    if (super.ref) {
+      super.ref.dispose();
     }
     return this._toggle(false);
   }
@@ -93,40 +91,26 @@ export class RSidenavComponent implements RSubscriptionComponent {
     });
   }
 
-  private shouldAttach() {
+  private shouldAttach(): void {
     if (this.mode === 'over' && this.opened) {
-      this.attachToOverlay();
+      super.attachToOverlay();
     }
   }
 
-  private attachToOverlay(): void {
-    this.createOverlay();
-    // if (!this.ref) {
-    //   // this.subscribeOnPositionChange();
-    //   // this.createKeyManager();
-    //   // this.subscribeOnOverlayKeys();
-    // } else {
-    //   this.createOverlay();
-    // }
-    this.ref.attach(this.portal);
-  }
-
-  private createOverlay(): void {
-    const positionStrategy = this.createPositionStrategy();
-    this.ref = this.overlay.create({ positionStrategy, hasBackdrop: true });
-    this.subs.add(this.ref.backdropClick().subscribe(() => {
-      this.close();
-    }));
-  }
-
-  private createPositionStrategy() {
-    return new GlobalPositionStrategy().top().left().right().bottom();
-  }
-
+  private _initialValue = -this.width;
   @HostBinding('style.margin-left.px')
   get marginLeft(): number {
-    console.log('tu')
-    return this.opened ? 0 : -this.width;
+    // if (this.opened && this._initialValue === -this.width) {
+    //   this.isMoving = true;
+    // } else if (!this.opened && this._initialValue === 0) {
+    //   this.isMoving = true;
+    // } else {
+    //   this.isMoving = false;
+    // }
+    // if (this.opened) {
+
+    // }
+    return this.opened ? 0 : this._initialValue;
   }
 
   @HostBinding('style.visibility')

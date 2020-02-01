@@ -1,7 +1,7 @@
 $default-width: 256px !default;
 
 :host {
-  display: inline-block;
+  display: block;
   width: $default-width;
   height: 100%;
   overflow: auto;
