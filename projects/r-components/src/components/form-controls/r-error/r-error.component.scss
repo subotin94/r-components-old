@@ -1,0 +1,11 @@
+@import "../../../styles/r-theme.scss";
+
+:host {
+  display: block;
+  color: r-theme(filled-danger-background-color);
+  // We have to add margin here because of input margin
+  // Inputs has to have margins because of r-outline
+  font-size: 13px;
+  font-weight: normal;
+  margin: 2px 8px 12px;
+}

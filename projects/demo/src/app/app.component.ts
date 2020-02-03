@@ -3,6 +3,7 @@ import { RToastService } from '../../../r-components/src/public-api';
 import { MatDialog } from '@angular/material/dialog';
 import { RSidenavComponent } from '../../../r-components/src/components/navigation/r-sidenav/r-sidenav.component';
 import { RNavbarComponent } from 'projects/r-components/src/components/navigation/r-navbar/r-navbar.component';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,11 @@ import { RNavbarComponent } from 'projects/r-components/src/components/navigatio
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  /**
+   * @rError
+   */
+  requiredField = new FormControl(null, Validators.required);
+
   ngOnInit() {
     console.log(this.sidenav);
     this.sidenav.openedChange.subscribe(console.log);

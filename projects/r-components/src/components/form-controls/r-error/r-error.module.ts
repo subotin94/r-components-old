@@ -8,6 +8,9 @@ import { RErrorComponent } from './r-error.component';
   declarations: [RErrorComponent],
   imports: [
     CommonModule
+  ],
+  exports: [
+    RErrorComponent
   ]
 })
 export class RErrorModule { }

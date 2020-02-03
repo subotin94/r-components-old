@@ -20,6 +20,8 @@ import { RSidenavModule } from '../../../r-components/src/components/navigation/
 import { RNavbarModule } from 'projects/r-components/src/components/navigation/r-navbar/r-navbar.module';
 import { RLogoComponent } from './components/icons/r-logo.component';
 import { DonateModule } from './pages/donate/donate.module';
+import { RErrorModule } from 'projects/r-components/src/components/form-controls/r-error/r-error.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,11 +34,13 @@ import { DonateModule } from './pages/donate/donate.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     HighlightModule,
+    ReactiveFormsModule,
     RButtonModule,
     RAlertModule,
     RIconModule,
     RBrowserCardModule,
     RInputModule,
+    RErrorModule,
     RToastModule.forRoot(),
     RSelectModule,
     RHintModule,

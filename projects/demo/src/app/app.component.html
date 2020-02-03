@@ -5,6 +5,8 @@
       <r-navbar fixed>
         <r-logo width="49" height="45"></r-logo>
       </r-navbar>
+      <input [formControl]="requiredField" type="text" r-input placeholder="Username">
+      <r-error *ngIf="requiredField?.touched && requiredField?.errors.required">Username is required</r-error>
       <router-outlet></router-outlet>
     </r-sidenav-content>
   </r-sidenav-container>
