@@ -5,7 +5,7 @@
 
 @mixin input-theme() {
   input[r-input], textarea[r-input] {
-    @include r-component-animation(box-shadow, border);
+    @include r-component-animation(box-shadow);
     color: r-theme(filled-basic-color);
     background-color: r-theme(filled-basic-background-color);
     border: r-theme(filled-border-2);
