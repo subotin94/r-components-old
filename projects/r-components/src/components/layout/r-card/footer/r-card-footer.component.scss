@@ -1,0 +1,9 @@
+@import "../../../../styles/r-theme.scss";
+
+:host {
+  display: block;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: normal;
+  border-top: 1px solid r-theme(filled-basic-border-color);
+}

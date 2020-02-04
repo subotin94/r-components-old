@@ -6,13 +6,15 @@ import { RCardHeaderComponent } from './header/r-card-header.component';
 import { RCardAvatarDirective } from './header/r-card-avatar.directive';
 import { RCardTitleDirective } from './header/r-card-title.directive';
 import { RCardBodyComponent } from './body/r-card-body.component';
+import { RCardFooterComponent } from './footer/r-card-body.component';
 
 const R_CARD_COMPONENTS = [
   RCardComponent,
   RCardHeaderComponent,
   RCardAvatarDirective,
   RCardTitleDirective,
-  RCardBodyComponent
+  RCardBodyComponent,
+  RCardFooterComponent
 ];
 
 @NgModule({

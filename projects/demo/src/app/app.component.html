@@ -18,6 +18,9 @@
           <input [formControl]="requiredField" type="text" r-input placeholder="Username">
           <r-error *ngIf="requiredField?.touched && requiredField?.errors?.required">Username is required</r-error>
         </r-card-body>
+        <r-card-footer>
+          Card footer
+        </r-card-footer>
       </r-card>
       <router-outlet></router-outlet>
     </r-sidenav-content>
