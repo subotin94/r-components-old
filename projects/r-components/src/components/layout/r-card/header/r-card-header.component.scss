@@ -1,7 +1,10 @@
+@import "../../../../styles/r-theme.scss";
+
 :host {
   display: inline-flex;
   flex-direction: row;
-  padding:17px;
+  padding: 16px;
+  border-bottom: 1px solid r-theme(filled-basic-border-color);
   .r-card-avatar {
     width: 40px;
     height: 40px;
@@ -10,7 +13,6 @@
     flex-shrink: 0;
   }
   .r-card-header-text {
-    margin: 0 16px;
     [r-card-title] {
       font-size: 20px;
       font-weight: bold;

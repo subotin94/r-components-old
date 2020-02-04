@@ -1,4 +1,9 @@
+@import "../../../styles/r-theme.scss";
+
 :host {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
   border-radius: 4px;
+  box-shadow: r-theme(default-shadow-1);
+  background-color: r-theme(default-color-1);
 }

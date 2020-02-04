@@ -1,14 +1,27 @@
 <r-layout>
   <r-sidenav-container>
+    <!-- drawer component -->
     <r-sidenav [opened]="!isMobile" [mode]="isMobile ? 'over' : 'push'">caooo</r-sidenav>
+
+    <!-- content component -->
     <r-sidenav-content>
+      <!-- app navbar -->
       <r-navbar fixed>
         <r-logo width="49" height="45"></r-logo>
       </r-navbar>
-      <input [formControl]="requiredField" type="text" r-input placeholder="Username">
-      <r-error *ngIf="requiredField?.touched && requiredField?.errors?.required">Username is required</r-error>
+      <!-- everything under navbar is just regular content -->
+      <r-card>
+        <r-card-header>
+          <h3 r-card-title>Input with error</h3>
+        </r-card-header>
+        <r-card-body>
+          <input [formControl]="requiredField" type="text" r-input placeholder="Username">
+          <r-error *ngIf="requiredField?.touched && requiredField?.errors?.required">Username is required</r-error>
+        </r-card-body>
+      </r-card>
       <router-outlet></router-outlet>
     </r-sidenav-content>
+
   </r-sidenav-container>
   <!-- <r-card>
     <r-card-header>
