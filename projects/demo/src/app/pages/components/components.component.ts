@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-components',
+  selector: 'demo-components',
   template: `
     <p>
       components works!

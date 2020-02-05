@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-tree',
+  selector: 'demo-tree',
   templateUrl: './tree.component.html',
   styleUrls: ['./tree.component.scss']
 })

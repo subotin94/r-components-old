@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-landing',
+  selector: 'demo-landing',
   template: `
     <p>
       landing works!

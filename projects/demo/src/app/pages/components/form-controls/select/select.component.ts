@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-select',
+  selector: 'demo-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss']
 })

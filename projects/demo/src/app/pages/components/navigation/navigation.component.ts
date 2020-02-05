@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-navigation',
+  selector: 'demo-navigation',
   template: `
     <p>
       navigation works!

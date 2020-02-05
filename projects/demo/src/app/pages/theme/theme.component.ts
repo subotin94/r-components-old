@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-theme',
+  selector: 'demo-theme',
   template: `
     <p>
       theme works!

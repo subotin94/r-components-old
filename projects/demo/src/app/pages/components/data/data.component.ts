@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-data',
+  selector: 'demo-data',
   template: `
     <p>
       data works!

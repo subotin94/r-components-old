@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-guides',
+  selector: 'demo-guides',
   template: `
     <p>
       guides works!

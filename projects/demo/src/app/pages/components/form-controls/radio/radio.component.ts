@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-radio',
+  selector: 'demo-radio',
   templateUrl: './radio.component.html',
   styleUrls: ['./radio.component.scss']
 })

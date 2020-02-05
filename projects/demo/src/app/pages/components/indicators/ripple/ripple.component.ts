@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-ripple',
+  selector: 'demo-ripple',
   templateUrl: './ripple.component.html',
   styleUrls: ['./ripple.component.scss']
 })

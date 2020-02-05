@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-popups',
+  selector: 'demo-popups',
   template: `
     <p>
       popups works!

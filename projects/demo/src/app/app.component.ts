@@ -6,7 +6,7 @@ import { RNavbarComponent } from 'projects/r-components/src/components/navigatio
 import { FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-root',
+  selector: 'demo-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -33,7 +33,6 @@ export class AppComponent {
     await this.sidenav.toggle();
     console.log('Done');
   }
-
   /**
    * @navbar
    */

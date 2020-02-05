@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-task',
+  selector: 'demo-task',
   templateUrl: './task.component.html',
   styleUrls: ['./task.component.scss']
 })

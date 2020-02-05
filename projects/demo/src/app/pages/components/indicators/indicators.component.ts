@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-indicators',
+  selector: 'demo-indicators',
   template: `
     <p>
       indicators works!

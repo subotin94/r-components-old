@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-auth',
+  selector: 'demo-auth',
   template: `
     <p>
       auth works!

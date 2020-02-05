@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-icons',
+  selector: 'demo-icons',
   template: `
     <p>
       icons works!

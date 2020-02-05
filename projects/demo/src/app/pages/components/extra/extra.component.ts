@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-extra',
+  selector: 'demo-extra',
   template: `
     <p>
       extra works!

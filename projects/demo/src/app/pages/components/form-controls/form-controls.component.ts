@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-form-controls',
+  selector: 'demo-form-controls',
   template: `
     <p>
       form-controls works!

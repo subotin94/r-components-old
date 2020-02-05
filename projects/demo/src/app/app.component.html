@@ -1,16 +1,27 @@
 <r-layout>
   <r-sidenav-container>
     <!-- drawer component -->
-    <r-sidenav [opened]="!isMobile" [mode]="isMobile ? 'over' : 'push'">caooo</r-sidenav>
+    <r-sidenav [opened]="!isMobile" [mode]="isMobile ? 'over' : 'push'">
+      <ul>
+        <h4>Layout</h4>
+        <li><a routerLink="/components/layout">Overview</a></li>
+        <li><a routerLink="/components/card">Card</a></li>
+      </ul>
+    </r-sidenav>
 
     <!-- content component -->
     <r-sidenav-content>
       <!-- app navbar -->
       <r-navbar fixed>
         <r-logo width="49" height="45"></r-logo>
+        <div class="links">
+          <a routerLink="/donate">Donate</a>
+          <iframe src="https://ghbtns.com/github-btn.html?user=subotin94&repo=r-components&type=star&count=true" frameborder="0"
+          scrolling="0" width="106px" height="20px"></iframe>
+        </div>
       </r-navbar>
       <!-- everything under navbar is just regular content -->
-      <r-card fullWidth>
+      <r-card>
         <r-card-header>
           <h3 r-card-title>Input with error</h3>
         </r-card-header>
@@ -18,9 +29,9 @@
           <input [formControl]="requiredField" type="text" r-input placeholder="Username">
           <r-error *ngIf="requiredField?.touched && requiredField?.errors?.required">Username is required</r-error>
         </r-card-body>
-        <r-card-footer>
+        <!-- <r-card-footer>
           Card footer
-        </r-card-footer>
+        </r-card-footer> -->
       </r-card>
       <router-outlet></router-outlet>
     </r-sidenav-content>
@@ -61,12 +72,12 @@
 
 <!-- <section>
   <h1>Welcome to r-components demo preview</h1> -->
-  <!-- TODO create r-hint component -->
-  <!-- <r-hint status="warning">
+<!-- TODO create r-hint component -->
+<!-- <r-hint status="warning">
     <p>This is not production ready library yet</p>
   </r-hint> -->
-  <!-- TODO create r-hint component -->
-  <!-- <r-browser-card>
+<!-- TODO create r-hint component -->
+<!-- <r-browser-card>
     <pre><code [highlight]="'npm i @r-components/theme @angular/cdk @angular/animations @angular/material'"></code></pre>
   </r-browser-card> -->
 <!-- </section>
@@ -105,10 +116,10 @@
 </section>
 <section class="inputs">
   <h1>Inputs:</h1> -->
-  <!-- <r-browser-card>
+<!-- <r-browser-card>
     <pre><code [highlight]="inputModule"></code></pre>
   </r-browser-card> -->
-  <!-- <ul>
+<!-- <ul>
     <dl>
       <dt>
         <h3>Status Inputs:</h3>
@@ -126,10 +137,10 @@
         <textarea r-input status="info" cols="21" rows="3" placeholder="Info textarea"></textarea>
         <textarea r-input status="success" cols="21" rows="3" placeholder="Success textarea"></textarea>
         <textarea r-input status="basic" cols="21" rows="3" placeholder="Basic textarea"></textarea> -->
-        <!-- <r-browser-card>
+<!-- <r-browser-card>
           <pre><code [highlight]="statusInputs"></code></pre>
         </r-browser-card> -->
-      <!-- </dd>
+<!-- </dd>
 
     </dl>
   </ul>
@@ -150,8 +161,8 @@
         <button (click)="primaryToast()" r-button status="primary">Primary</button>
         <button (click)="infoToast()" r-button status="info">Info</button>
         <button (click)="successToast()" r-button status="success">Success</button> -->
-        <!-- TODO default toast -->
-        <!-- <r-browser-card>
+<!-- TODO default toast -->
+<!-- <r-browser-card>
           <pre><code [highlight]="toastServicee"></code></pre>
         </r-browser-card>
       </dd>
@@ -175,8 +186,8 @@
         <button r-button status="primary">Primary</button>
         <button r-button status="info">Info</button>
         <button r-button status="success">Success</button> -->
-        <!-- TODO basic button -->
-        <!-- <r-browser-card>
+<!-- TODO basic button -->
+<!-- <r-browser-card>
           <pre><code [highlight]="statusButtons"></code></pre>
         </r-browser-card>
       </dd>
@@ -189,8 +200,8 @@
         <button r-button appearance="outline" status="primary">Primary</button>
         <button r-button appearance="outline" status="info">Info</button>
         <button r-button appearance="outline" status="success">Success</button> -->
-        <!-- TODO basic button -->
-        <!-- <r-browser-card>
+<!-- TODO basic button -->
+<!-- <r-browser-card>
           <pre><code [highlight]="outlineStatusButtons"></code></pre>
         </r-browser-card>
       </dd>
@@ -231,8 +242,8 @@
           <pre><code [highlight]="disabledButtons"></code></pre>
         </r-browser-card>
       </dd> -->
-      <!-- TODO outline buttons -->
-    <!-- </dl>
+<!-- TODO outline buttons -->
+<!-- </dl>
   </ul>
 </section>
 
@@ -259,8 +270,8 @@
     <li>
       <r-alert closable="true" status="success">Success outline</r-alert>
     </li> -->
-    <!-- TODO basic alert -->
-    <!-- <r-browser-card>
+<!-- TODO basic alert -->
+<!-- <r-browser-card>
       <pre><code [highlight]="outlineAlerts"></code></pre>
     </r-browser-card>
   </ul>
@@ -281,8 +292,8 @@
     <li>
       <r-alert appearance="filled" closable="true" status="success">Success filled</r-alert>
     </li> -->
-    <!-- TODO basic alert -->
-    <!-- <r-browser-card>
+<!-- TODO basic alert -->
+<!-- <r-browser-card>
       <pre><code [highlight]="filledAlerts"></code></pre>
     </r-browser-card>
   </ul>

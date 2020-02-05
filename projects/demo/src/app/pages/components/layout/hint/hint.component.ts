@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-hint',
+  selector: 'demo-hint',
   templateUrl: './hint.component.html',
   styleUrls: ['./hint.component.scss']
 })
