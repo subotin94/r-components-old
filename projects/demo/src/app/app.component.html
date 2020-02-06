@@ -3,9 +3,10 @@
     <!-- drawer component -->
     <r-sidenav [opened]="!isMobile" [mode]="isMobile ? 'over' : 'push'">
       <ul>
-        <h4>Layout</h4>
-        <li><a routerLink="/components/layout">Overview</a></li>
-        <li><a routerLink="/components/card">Card</a></li>
+        <h3>Layout</h3>
+        <li><a routerLink="/components/layout/overview">Overview</a></li>
+        <li><a routerLink="/components/layout/card">Card</a></li>
+        <li><a routerLink="/components/layout/tabs">Tabs</a></li>
       </ul>
     </r-sidenav>
 
@@ -16,23 +17,12 @@
         <r-logo width="49" height="45"></r-logo>
         <div class="links">
           <a routerLink="/donate">Donate</a>
-          <iframe src="https://ghbtns.com/github-btn.html?user=subotin94&repo=r-components&type=star&count=true" frameborder="0"
-          scrolling="0" width="106px" height="20px"></iframe>
+          <!-- <iframe src="https://ghbtns.com/github-btn.html?user=subotin94&repo=r-components&type=star&count=true" frameborder="0"
+          scrolling="0" width="106px" height="20px"></iframe> -->
         </div>
       </r-navbar>
       <!-- everything under navbar is just regular content -->
-      <r-card>
-        <r-card-header>
-          <h3 r-card-title>Input with error</h3>
-        </r-card-header>
-        <r-card-body>
-          <input [formControl]="requiredField" type="text" r-input placeholder="Username">
-          <r-error *ngIf="requiredField?.touched && requiredField?.errors?.required">Username is required</r-error>
-        </r-card-body>
-        <!-- <r-card-footer>
-          Card footer
-        </r-card-footer> -->
-      </r-card>
+
       <router-outlet></router-outlet>
     </r-sidenav-content>
 
@@ -156,7 +146,7 @@
         <h3>Status Toasts:</h3>
       </dt>
       <dd>
-        <button (click)="dangerToast()" r-button status="danger">Danger</button>
+        <button (click)="dangerToast()" r-button [status]="danger">Danger</button>
         <button (click)="warningToast()" r-button status="warning">Warning</button>
         <button (click)="primaryToast()" r-button status="primary">Primary</button>
         <button (click)="infoToast()" r-button status="info">Info</button>

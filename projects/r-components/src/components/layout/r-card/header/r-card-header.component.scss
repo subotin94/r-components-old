@@ -12,6 +12,9 @@
     border-radius: 50%;
     flex-shrink: 0;
   }
+}
+
+::ng-deep:host {
   .r-card-header-text {
     [r-card-title] {
       font-size: 20px;

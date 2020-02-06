@@ -3,9 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'demo-components',
   template: `
-    <p>
-      components works!
-    </p>
+    <router-outlet></router-outlet>
   `,
   styles: []
 })

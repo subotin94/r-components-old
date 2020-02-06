@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, QueryList, ContentChildren, AfterContentInit } from '@angular/core';
+import { RTabComponent } from './r-tab/r-tab.component';
 
 @Component({
-  selector: 'lib-r-tabs',
+  selector: 'r-tabs',
   templateUrl: './r-tabs.component.html',
   styleUrls: ['./r-tabs.component.scss']
 })
-export class RTabsComponent implements OnInit {
+export class RTabsComponent implements AfterContentInit {
+
+  @ContentChildren(RTabComponent)
+  tabs: QueryList<RTabComponent>;
 
   constructor() { }
 
-  ngOnInit() {
+  ngAfterContentInit(): void {
+    console.log('Hello World');
   }
 
 }
