@@ -17,6 +17,17 @@ export class RTabsComponent implements AfterContentInit {
     this.checkActiveTab();
   }
 
+  switchTab(tab: RTabComponent): void {
+    this.tabs.forEach((_tab: RTabComponent) => {
+      _tab.active = false;
+    });
+    this.setActiveTab(tab);
+  }
+
+  private setActiveTab(tab: RTabComponent) {
+    tab.active = true;
+  }
+
   private checkActiveTab(): void {
     let isAnyTabActive = false;
     this.tabs.forEach((tab: RTabComponent) => {
@@ -28,15 +39,26 @@ export class RTabsComponent implements AfterContentInit {
       }
     });
     if (!isAnyTabActive) {
-      this.tabs.first.active = true;
+      this.setActiveTab(this.tabs.first);
     }
   }
 
-  switchTab(tab: RTabComponent): void {
-    this.tabs.forEach((_tab: RTabComponent) => {
-      _tab.active = false;
-    });
-    tab.active = true;
+  get rTabActiveLabelLeft(): number {
+    const tabWidth = 6.10375;
+    let retVal = 1;
+    for (let i = 0; i < this.tabs.length; i++) {
+      const tab: RTabComponent = this.tabs['_results'][i];
+      if (!tab) {
+        break;
+      } else if (tab && tab.active && i === 0) {
+        break;
+      } else if (tab.active) {
+        break;
+      } else {
+        retVal += tabWidth;
+      }
+      return retVal;
+    }
   }
 
 }

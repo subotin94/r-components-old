@@ -19,7 +19,7 @@ const defaultOptions = { params: { direction: '' } };
   selector: 'r-toast-container',
   template: `
     <ng-container>
-      <r-toast [@fadeIn]="fadeIn" *ngFor="let toast of content" [toast]="toast"></r-toast>
+      <r-toast @fadeIn *ngFor="let toast of content" [toast]="toast"></r-toast>
     </ng-container>
   `,
   animations: [
@@ -39,7 +39,5 @@ export class RToastContainerComponent {
 
   @ViewChildren(RToastComponent)
   toasts: QueryList<RToastComponent>;
-
-  fadeIn: any;
 
 }

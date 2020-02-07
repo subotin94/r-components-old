@@ -39,11 +39,7 @@ export class RCardComponent implements OnInit {
 
   @HostBinding('style.width')
   get width(): string {
-    if (this.fullWidth) {
-      return '100%';
-    } else {
-      return 'unset';
-    }
+    return this.fullWidth ? '100%' : 'initial';
   }
 
 }

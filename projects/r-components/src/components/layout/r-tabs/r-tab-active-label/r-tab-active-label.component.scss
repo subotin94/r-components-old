@@ -1,0 +1,17 @@
+@import "../../../../styles/r-theme.scss";
+@import "../../../../styles/variants.scss";
+
+:host {
+  display: block;
+  height: 4px; 
+  width: 6.10375rem;
+  position: absolute;
+  // Overlap r-card-header's border 
+  bottom: -1px;
+  border-radius: 3px;
+  @each $status in r-get-statuses() {
+    &.status-#{$status} {
+      background-color: r-theme(filled-#{$status}-background-color);
+    }
+  }
+}

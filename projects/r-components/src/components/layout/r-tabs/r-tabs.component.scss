@@ -1,13 +1,19 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/r-theme.scss";
+
 :host {
   display: inline-block;
   r-card {
     r-card-header {
-      padding-bottom: 0;
+      position: relative;
       a {
-        padding: 16px 32px;
+        padding: 8px 32px;
         font-size: 14px;
         line-height: 16px;
         cursor: pointer;
+        &:hover {
+          color: r-theme(filled-info-background-color);
+        }
       }
     }
   }
