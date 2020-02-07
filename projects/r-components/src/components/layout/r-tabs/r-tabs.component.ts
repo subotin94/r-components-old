@@ -14,6 +14,10 @@ export class RTabsComponent implements AfterContentInit {
   constructor() { }
 
   ngAfterContentInit(): void {
+    this.checkActiveTab();
+  }
+
+  private checkActiveTab(): void {
     let isAnyTabActive = false;
     this.tabs.forEach((tab: RTabComponent) => {
       if (isAnyTabActive && tab.active) {
