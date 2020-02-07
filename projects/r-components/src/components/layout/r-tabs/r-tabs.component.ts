@@ -14,7 +14,25 @@ export class RTabsComponent implements AfterContentInit {
   constructor() { }
 
   ngAfterContentInit(): void {
-    console.log('Hello World');
+    let isAnyTabActive = false;
+    this.tabs.forEach((tab: RTabComponent) => {
+      if (isAnyTabActive && tab.active) {
+        tab.active = false;
+        throw new Error('Only one r-tab can be active');
+      } else if (tab.active) {
+        isAnyTabActive = true;
+      }
+    });
+    if (!isAnyTabActive) {
+      this.tabs.first.active = true;
+    }
+  }
+
+  switchTab(tab: RTabComponent): void {
+    this.tabs.forEach((_tab: RTabComponent) => {
+      _tab.active = false;
+    });
+    tab.active = true;
   }
 
 }

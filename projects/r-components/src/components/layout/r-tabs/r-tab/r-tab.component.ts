@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'r-tab',
@@ -9,10 +9,12 @@ import { Component, Input } from '@angular/core';
 })
 export class RTabComponent {
 
-  @Input()
-  label: string;
+  @Input() label: string;
+  @Input() active: boolean = false;
 
-  @Input()
-  active: boolean = false;
+  @HostBinding('style.display')
+  get display(): string {
+    return this.active ? 'inline-block' : 'none';
+  }
 
 }

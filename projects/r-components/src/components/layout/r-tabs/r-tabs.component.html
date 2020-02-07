@@ -1,7 +1,7 @@
 <r-card>
   <r-card-header>
     <ng-container>
-      <a *ngFor="let tab of tabs?._results">{{tab?.label}}</a>
+      <a (click)="switchTab(tab)" *ngFor="let tab of tabs?._results">{{tab?.label}}</a>
     </ng-container>
   </r-card-header>
   <r-card-body>
