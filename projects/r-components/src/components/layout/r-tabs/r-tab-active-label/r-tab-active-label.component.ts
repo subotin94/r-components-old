@@ -5,20 +5,31 @@ import { RComponentStatus } from '../../../../core/types';
   selector: 'r-tab-active-label',
   template: ``,
   styleUrls: ['./r-tab-active-label.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RTabActiveLabelComponent {
   @Input() status: RComponentStatus = 'info';
 
   @Input()
-  @HostBinding('style.left.rem')
-  get left(): number {
-    return this._left;
+  @HostBinding('style.width.px')
+  get labelWidth(): number {
+    return this._labelWidth;
   }
-  set left(left: number) {
-    this._left = left;
+  set labelWidth(labelWidth: number) {
+    this._labelWidth = labelWidth;
   }
-  private _left = 1;
+  private _labelWidth = 0;
+  ngOnInit() {console.log(this.labelWidth)}
+
+  @Input()
+  @HostBinding('style.margin-left.px')
+  get marginLeft(): number {
+    return this._marginLeft;
+  }
+  set marginLeft(marginLeft: number) {
+    this._marginLeft = marginLeft;
+  }
+  private _marginLeft = 0;
 
   @HostBinding('class.status-info')
   get info(): boolean {

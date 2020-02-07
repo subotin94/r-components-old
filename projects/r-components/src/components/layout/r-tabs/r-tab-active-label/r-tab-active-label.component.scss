@@ -1,14 +1,15 @@
 @import "../../../../styles/r-theme.scss";
+@import "../../../../styles/mixins.scss";
 @import "../../../../styles/variants.scss";
 
 :host {
-  display: block;
+  display: inline-block;
   height: 4px; 
-  width: 6.10375rem;
   position: absolute;
   // Overlap r-card-header's border 
   bottom: -1px;
   border-radius: 3px;
+  @include r-component-animation(margin);
   @each $status in r-get-statuses() {
     &.status-#{$status} {
       background-color: r-theme(filled-#{$status}-background-color);

@@ -10,6 +10,8 @@ export class RTabsComponent implements AfterContentInit {
 
   @ContentChildren(RTabComponent)
   tabs: QueryList<RTabComponent>;
+  rTabActiveLabelMarginLeft = 0;
+  activeTab: RTabComponent;
 
   constructor() { }
 
@@ -26,6 +28,8 @@ export class RTabsComponent implements AfterContentInit {
 
   private setActiveTab(tab: RTabComponent) {
     tab.active = true;
+    this.activeTab = tab;
+    this.updateRTabActiveLabelMarginLeft();
   }
 
   private checkActiveTab(): void {
@@ -43,9 +47,8 @@ export class RTabsComponent implements AfterContentInit {
     }
   }
 
-  get rTabActiveLabelLeft(): number {
-    const tabWidth = 6.10375;
-    let retVal = 1;
+  private updateRTabActiveLabelMarginLeft(): void {
+    let retVal = 0;
     for (let i = 0; i < this.tabs.length; i++) {
       const tab: RTabComponent = this.tabs['_results'][i];
       if (!tab) {
@@ -55,10 +58,10 @@ export class RTabsComponent implements AfterContentInit {
       } else if (tab.active) {
         break;
       } else {
-        retVal += tabWidth;
+        retVal += tab.width;
       }
-      return retVal;
     }
+    this.rTabActiveLabelMarginLeft = retVal;
   }
 
 }

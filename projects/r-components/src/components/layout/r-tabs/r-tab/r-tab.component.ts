@@ -1,4 +1,4 @@
-import { Component, Input, HostBinding } from '@angular/core';
+import { Component, Input, HostBinding, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'r-tab',
@@ -11,6 +11,13 @@ export class RTabComponent {
 
   @Input() label: string;
   @Input() active: boolean = false;
+  width: number;
+
+  constructor(private readonly hostRef: ElementRef<HTMLElement>) { }
+
+  ngOnInit(): void {
+    this.width = this.hostRef.nativeElement.getBoundingClientRect().width + 64;
+  }
 
   @HostBinding('style.display')
   get display(): string {
