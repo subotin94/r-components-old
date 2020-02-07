@@ -2,6 +2,7 @@ import { Component, Input, QueryList, ViewChildren } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { RToastComponent } from './r-toast.component';
 import { RToast } from './r-toast.model';
+import { FnParam } from '@angular/compiler/src/output/output_ast';
 
 const voidState = style({
   transform: 'translateX({{ direction }}-110%)',
