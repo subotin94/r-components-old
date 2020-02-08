@@ -33,8 +33,6 @@ export class RSidenavContainerComponent implements RSubscriptionComponent {
   }
 
   protected attachToOverlay(): void {
-    console.log(this.portal);
-    console.log(_portal);
     this.createOverlay();
     // if (!this.ref) {
     //   // this.subscribeOnPositionChange();
@@ -57,7 +55,6 @@ export class RSidenavContainerComponent implements RSubscriptionComponent {
   $ref = new Subject();
   ngAfterContentInit() {
     const ref = this.getSidenavContentRef();
-    console.log(ref);
     this.$ref.next(ref);
   }
 

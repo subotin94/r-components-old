@@ -5,11 +5,12 @@
 :host {
   display: inline-block;
   height: 4px; 
+  width: 100%;
   position: absolute;
+  left: 0;
   // Overlap r-card-header's border 
-  bottom: -1px;
+  bottom: -17px;
   border-radius: 3px;
-  @include r-component-animation(margin);
   @each $status in r-get-statuses() {
     &.status-#{$status} {
       background-color: r-theme(filled-#{$status}-background-color);

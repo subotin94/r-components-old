@@ -17,8 +17,8 @@ export class AppComponent {
   requiredField = new FormControl(null, Validators.required);
 
   ngOnInit() {
-    console.log(this.sidenav);
-    this.sidenav.openedChange.subscribe(console.log);
+    // console.log(this.sidenav);
+    // this.sidenav.openedChange.subscribe(console.log);
   }
 
   /**
@@ -31,7 +31,7 @@ export class AppComponent {
   }
   async toggle() {
     await this.sidenav.toggle();
-    console.log('Done');
+    // console.log('Done');
   }
   /**
    * @navbar
@@ -51,7 +51,7 @@ export class AppComponent {
    * @selectMenus
    */
   onSelectedChange($event) {
-    console.log($event);
+    // console.log($event);
   }
   /**
    * @toasters

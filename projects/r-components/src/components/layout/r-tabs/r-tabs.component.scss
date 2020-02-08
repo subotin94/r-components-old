@@ -6,9 +6,12 @@
   r-card {
     r-card-header {
       position: relative;
+      padding-bottom: 0;
       a {
         padding: 8px 32px;
+        margin-bottom: 16px;
         font-size: 14px;
+        position: relative;
         line-height: 16px;
         cursor: pointer;
         &:hover {

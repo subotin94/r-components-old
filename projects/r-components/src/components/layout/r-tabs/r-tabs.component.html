@@ -1,8 +1,11 @@
 <r-card [fullWidth]="true">
   <r-card-header>
     <ng-container>
-      <a (click)="switchTab(tab)" [style.color]="tab?.active ? '#0095FF' : '#8F9BB3'" *ngFor="let tab of tabs?._results">{{tab?.label}}</a>
-      <r-tab-active-label [marginLeft]="rTabActiveLabelMarginLeft" [labelWidth]="activeTab?.width"></r-tab-active-label>
+      <a #rTabHeader (click)="switchTab(tab)" [style.color]="tab?.active ? '#0095FF' : '#8F9BB3'"
+        *ngFor="let tab of tabs?._results">
+        {{tab?.label}}
+        <r-tab-active-label [style.display]="tab?.active ? 'inline-block' : 'none'"></r-tab-active-label>
+      </a>
     </ng-container>
   </r-card-header>
   <r-card-body>

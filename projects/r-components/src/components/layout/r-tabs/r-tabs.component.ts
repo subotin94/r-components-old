@@ -1,5 +1,6 @@
-import { Component, QueryList, ContentChildren, AfterContentInit } from '@angular/core';
+import { Component, QueryList, ContentChildren, AfterContentInit, ViewChildren } from '@angular/core';
 import { RTabComponent } from './r-tab/r-tab.component';
+import { RTabHeaderDirective } from './r-tab-header.directive';
 
 @Component({
   selector: 'r-tabs',
@@ -10,13 +11,17 @@ export class RTabsComponent implements AfterContentInit {
 
   @ContentChildren(RTabComponent)
   tabs: QueryList<RTabComponent>;
+  @ViewChildren('rTabHeader')
+  headers: QueryList<HTMLElement>;
   rTabActiveLabelMarginLeft = 0;
+  rTabActiveLabelWidth = 0;
   activeTab: RTabComponent;
 
   constructor() { }
 
   ngAfterContentInit(): void {
     this.checkActiveTab();
+    console.log(this.headers)
   }
 
   switchTab(tab: RTabComponent): void {
@@ -29,6 +34,10 @@ export class RTabsComponent implements AfterContentInit {
   private setActiveTab(tab: RTabComponent) {
     tab.active = true;
     this.activeTab = tab;
+    const index = this.tabs.toArray().findIndex(i => i === tab);
+    if (this.headers) {
+      this.rTabActiveLabelWidth = this.headers['_results'][index].nativeElement.getBoundingClientRect().width;
+    }
     this.updateRTabActiveLabelMarginLeft();
   }
 
@@ -58,7 +67,7 @@ export class RTabsComponent implements AfterContentInit {
       } else if (tab.active) {
         break;
       } else {
-        retVal += tab.width;
+        retVal += this.headers['_results'][i].nativeElement.getBoundingClientRect().width;
       }
     }
     this.rTabActiveLabelMarginLeft = retVal;
