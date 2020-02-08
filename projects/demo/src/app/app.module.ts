@@ -63,14 +63,14 @@ function getHighlightLanguages() {
     DonateModule,
     HighlightModule
   ],
-  providers: [
-    {
-      provide: HIGHLIGHT_OPTIONS,
-      useValue: {
-        languages: getHighlightLanguages()
-      }
-    }
-  ],
+  // providers: [
+  //   {
+  //     provide: HIGHLIGHT_OPTIONS,
+  //     useValue: {
+  //       languages: getHighlightLanguages()
+  //     }
+  //   }
+  // ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,9 +5,9 @@
   "scripts": {
     "components": "ng build r-components --watch",
     "ng": "ng",
-    "deploy": "rimraf dist && ng build --prod && ng build r-components && firebase deploy",
+    "deploy": "rimraf dist && ng build r-components && ng build --prod && firebase deploy",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "rimraf dist && ng build r-components && ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
