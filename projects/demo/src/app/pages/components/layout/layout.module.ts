@@ -7,6 +7,7 @@ import { OverviewModule } from './overview/overview.module';
 import { CardModule } from './card/card.module';
 import { TabsModule } from './tabs/tabs.module';
 import { ExpansionPanelModule } from './expansion-panel/expansion-panel.module';
+import { ButtonModule } from './button/button.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ExpansionPanelModule } from './expansion-panel/expansion-panel.module';
     CommonModule,
     LayoutRoutingModule,
     OverviewModule,
+    ButtonModule,
     CardModule,
     TabsModule,
     ExpansionPanelModule

@@ -2,7 +2,7 @@
   <r-card-header>
     <ng-container>
       <a #rTabHeader (click)="switchTab(tab)" [style.color]="tab?.active ? '#0095FF' : '#8F9BB3'"
-        *ngFor="let tab of tabs?._results">
+        *ngFor="let tab of tabs">
         {{tab?.label}}
         <r-tab-active-label [style.display]="tab?.active ? 'inline-block' : 'none'"></r-tab-active-label>
       </a>

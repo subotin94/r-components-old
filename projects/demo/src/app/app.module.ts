@@ -24,6 +24,14 @@ import { RErrorModule } from 'projects/r-components/src/components/form-controls
 import { ReactiveFormsModule } from '@angular/forms';
 import { RExpansionPanelModule } from 'projects/r-components/src/components/layout/r-expansion-panel/r-expansion-panel.module';
 
+function getHighlightLanguages() {
+  return {
+    typescript: () => import('highlight.js/lib/languages/typescript'),
+    css: () => import('highlight.js/lib/languages/css'),
+    xml: () => import('highlight.js/lib/languages/xml')
+  };
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,17 +60,14 @@ import { RExpansionPanelModule } from 'projects/r-components/src/components/layo
     RCardModule,
     RSidenavModule,
     RNavbarModule,
-    DonateModule
+    DonateModule,
+    HighlightModule
   ],
   providers: [
     {
       provide: HIGHLIGHT_OPTIONS,
       useValue: {
-        languages: {
-          typescript: () => import('highlight.js/lib/languages/typescript'),
-          css: () => import('highlight.js/lib/languages/css'),
-          xml: () => import('highlight.js/lib/languages/xml')
-        }
+        languages: getHighlightLanguages()
       }
     }
   ],

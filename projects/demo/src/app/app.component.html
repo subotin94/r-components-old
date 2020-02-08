@@ -13,10 +13,25 @@
           <br>
           <a routerLink="/components/layout/tabs">Tabs</a>
           <br>
+          <a routerLink="/components/layout/button">Button</a>
+          <br>
           <a routerLink="/components/layout/expansion-panel">Expansion panel</a>
         </r-expansion-panel-body>
       </r-expansion-panel>
-
+      <r-expansion-panel [fullWidth]="true" [disableShadow]="true">
+        <r-expansion-panel-header>
+          <h4>Popups</h4>
+        </r-expansion-panel-header>
+        <r-expansion-panel-body>
+          <a routerLink="/components/layout/overview">Toast</a>
+          <!-- <br>
+          <a routerLink="/components/layout/card">Card</a>
+          <br>
+          <a routerLink="/components/layout/tabs">Tabs</a>
+          <br>
+          <a routerLink="/components/layout/expansion-panel">Expansion panel</a> -->
+        </r-expansion-panel-body>
+      </r-expansion-panel>
     </r-sidenav>
 
     <!-- content component -->
@@ -166,83 +181,6 @@
         </r-browser-card>
       </dd>
     </dl>
-  </ul>
-</section>
-
-<section>
-  <h1>Buttons:</h1>
-  <r-browser-card>
-    <pre><code [highlight]="buttonModule"></code></pre>
-  </r-browser-card>
-  <ul>
-    <dl>
-      <dt>
-        <h3>Status Buttons:</h3>
-      </dt>
-      <dd>
-        <button r-button status="danger">Danger</button>
-        <button r-button status="warning">Warning</button>
-        <button r-button status="primary">Primary</button>
-        <button r-button status="info">Info</button>
-        <button r-button status="success">Success</button> -->
-<!-- TODO basic button -->
-<!-- <r-browser-card>
-          <pre><code [highlight]="statusButtons"></code></pre>
-        </r-browser-card>
-      </dd>
-      <dt>
-        <h3>Outline Status Buttons:</h3>
-      </dt>
-      <dd>
-        <button r-button appearance="outline" status="danger">Danger</button>
-        <button r-button appearance="outline" status="warning">Warning</button>
-        <button r-button appearance="outline" status="primary">Primary</button>
-        <button r-button appearance="outline" status="info">Info</button>
-        <button r-button appearance="outline" status="success">Success</button> -->
-<!-- TODO basic button -->
-<!-- <r-browser-card>
-          <pre><code [highlight]="outlineStatusButtons"></code></pre>
-        </r-browser-card>
-      </dd>
-      <dt>
-        <h3>Icon Buttons:</h3>
-      </dt>
-      <dd>
-        <button r-icon-button icon="add" status="primary">Add</button>
-        <button r-icon-button icon="clear" status="danger"></button>
-        <button r-icon-button icon="warning" status="warning"></button>
-        <button r-icon-button icon="add" status="primary"></button>
-        <button r-icon-button icon="info" status="info"></button>
-        <button r-icon-button icon="done" status="success"></button>
-        <r-browser-card>
-          <pre><code [highlight]="iconButtons"></code></pre>
-        </r-browser-card>
-        <p>
-          Icon buttons use <a href="https://material.io/resources/icons">Material icons font</a>
-        </p>
-      </dd>
-      <dt>
-        <h3>Button Shapes:</h3>
-      </dt>
-      <dd>
-        <button r-button status="primary" shape="rounded-pill">Rounded pill</button>
-        <r-browser-card>
-          <pre><code [highlight]="buttonShapes"></code></pre>
-        </r-browser-card>
-      </dd>
-      <dt>
-        <h3>Disabled Buttons:</h3>
-      </dt>
-      <dd>
-        <button r-button disabled="true">Disabled</button>
-        <button r-icon-button icon="add" status="primary" disabled="true"></button>
-        <button r-button appearance="outline" disabled="true" status="danger">Disabled</button>
-        <r-browser-card>
-          <pre><code [highlight]="disabledButtons"></code></pre>
-        </r-browser-card>
-      </dd> -->
-<!-- TODO outline buttons -->
-<!-- </dl>
   </ul>
 </section>
 

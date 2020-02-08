@@ -5,6 +5,7 @@ import { OverviewComponent } from './overview/overview.component';
 import { CardComponent } from './card/card.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
+import { ButtonComponent } from './button/button.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path: 'tabs',
         component: TabsComponent
+      },
+      {
+        path: 'button',
+        component: ButtonComponent
       },
       {
         path: 'expansion-panel',
