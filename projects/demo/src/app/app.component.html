@@ -2,13 +2,21 @@
   <r-sidenav-container>
     <!-- drawer component -->
     <r-sidenav [opened]="!isMobile" [mode]="isMobile ? 'over' : 'push'">
-      <ul>
-        <h3>Layout</h3>
-        <li><a routerLink="/components/layout/overview">Overview</a></li>
-        <li><a routerLink="/components/layout/card">Card</a></li>
-        <li><a routerLink="/components/layout/tabs">Tabs</a></li>
-        <li><a routerLink="/components/layout/expansion-panel">Expansion panel</a></li>
-      </ul>
+      <r-expansion-panel [fullWidth]="true" [disableShadow]="true">
+        <r-expansion-panel-header>
+          <h4>Layout</h4>
+        </r-expansion-panel-header>
+        <r-expansion-panel-body>
+          <a routerLink="/components/layout/overview">Overview</a>
+          <br>
+          <a routerLink="/components/layout/card">Card</a>
+          <br>
+          <a routerLink="/components/layout/tabs">Tabs</a>
+          <br>
+          <a routerLink="/components/layout/expansion-panel">Expansion panel</a>
+        </r-expansion-panel-body>
+      </r-expansion-panel>
+
     </r-sidenav>
 
     <!-- content component -->
@@ -17,9 +25,9 @@
       <r-navbar fixed>
         <r-logo width="49" height="45"></r-logo>
         <div class="links">
-          <a routerLink="/donate">Donate</a>
-          <!-- <iframe src="https://ghbtns.com/github-btn.html?user=subotin94&repo=r-components&type=star&count=true" frameborder="0"
-          scrolling="0" width="106px" height="20px"></iframe> -->
+          <!-- <a routerLink="/donate">Donate</a> -->
+          <iframe #github src="https://ghbtns.com/github-btn.html?user=subotin94&repo=r-components&type=star&count=true" frameborder="0"
+          scrolling="0" width="106px" height="20px"></iframe>
         </div>
       </r-navbar>
       <!-- everything under navbar is just regular content -->

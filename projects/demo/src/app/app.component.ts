@@ -1,4 +1,4 @@
-import { Component, ViewChild, TemplateRef } from '@angular/core';
+import { Component, ViewChild, TemplateRef, ElementRef, Renderer2 } from '@angular/core';
 import { RToastService } from '../../../r-components/src/public-api';
 import { MatDialog } from '@angular/material/dialog';
 import { RSidenavComponent } from '../../../r-components/src/components/navigation/r-sidenav/r-sidenav.component';
@@ -11,6 +11,7 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   /**
    * @rError
    */
@@ -44,7 +45,10 @@ export class AppComponent {
   openDialog() {
     this.dialog.open(this.dialogContent);
   }
-  constructor(private readonly toastService: RToastService, private dialog: MatDialog) { }
+  constructor(private readonly renderer: Renderer2,
+              private readonly toastService: RToastService,
+              private dialog: MatDialog) {
+  }
 
 
   /**

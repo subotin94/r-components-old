@@ -10,6 +10,8 @@ import { R_EXPANSION_PANEL_ANIMATIONS } from './r-expansion-panel.animations';
 })
 export class RExpansionPanelComponent implements OnInit {
 
+  @Input() disableShadow = false;
+  @Input() fullWidth = false;
   @Input() expanded: boolean = false;
   @ContentChild(RExpansionPanelHeaderComponent, { static: true })
   header: RExpansionPanelHeaderComponent;

@@ -31,3 +31,10 @@
     padding: 20px 0;
   }
 }
+
+::ng-deep {
+  iframe {
+    position: absolute;
+    right: 0;
+  }
+}

@@ -22,6 +22,7 @@ import { RLogoComponent } from './components/icons/r-logo.component';
 import { DonateModule } from './pages/donate/donate.module';
 import { RErrorModule } from 'projects/r-components/src/components/form-controls/r-error/r-error.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RExpansionPanelModule } from 'projects/r-components/src/components/layout/r-expansion-panel/r-expansion-panel.module';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     RSelectModule,
     RHintModule,
     RCheckboxModule,
+    RExpansionPanelModule,
     MatDialogModule,
     RNavbarModule,
     RCardModule,
