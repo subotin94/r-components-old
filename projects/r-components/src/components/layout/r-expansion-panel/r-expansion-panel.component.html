@@ -1,5 +1,5 @@
 <r-card [fullWidth]="fullWidth" [style.box-shadow]="disableShadow ? 'none' : true">
-  <r-card-header>
+  <r-card-header [style.border-top]="disableShadow ? '1px solid #EDF1F7' : 0">
     <ng-content select="r-expansion-panel-header"></ng-content>
   </r-card-header>
   <r-card-body [@expand]="{value: expanded ? 'expanded' : 'collapsed'}">

@@ -11,6 +11,7 @@
     border-color: transparent !important;
     color: inherit !important;
     padding: 5px !important;
+    margin: 0 !important;
     @include r-component-animation(transform);
     &:focus {
       box-shadow: none;

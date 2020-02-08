@@ -2,5 +2,13 @@
   display: inline-block;
 }
 :host {
-  display: block
+  display: block;
+  &:first-child {
+    r-card {
+      margin-bottom: -1px;
+      r-card-header {
+        border-top: 0 !important;
+      }
+    }
+  }
 }
