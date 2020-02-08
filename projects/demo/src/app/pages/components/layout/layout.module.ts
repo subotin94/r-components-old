@@ -8,6 +8,7 @@ import { CardModule } from './card/card.module';
 import { TabsModule } from './tabs/tabs.module';
 import { ExpansionPanelModule } from './expansion-panel/expansion-panel.module';
 import { ButtonModule } from './button/button.module';
+import { ListModule } from './list/list.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ButtonModule } from './button/button.module';
     ButtonModule,
     CardModule,
     TabsModule,
-    ExpansionPanelModule
+    ExpansionPanelModule,
+    ListModule
   ]
 })
 export class LayoutModule { }

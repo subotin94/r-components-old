@@ -1,0 +1,18 @@
+:host {
+  display: inline-block;
+  r-card {
+    r-card-body {
+      padding-left: 0;
+      ul {
+        margin: 0;
+        r-list-item {
+          li {
+            &::after {
+              content: "hr";
+            }
+          }
+        }
+      }
+    }
+  }
+}
