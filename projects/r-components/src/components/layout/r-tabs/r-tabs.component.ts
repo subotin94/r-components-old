@@ -1,6 +1,5 @@
-import { Component, QueryList, ContentChildren, AfterContentInit, ViewChildren } from '@angular/core';
+import { Component, QueryList, ContentChildren, AfterContentInit } from '@angular/core';
 import { RTabComponent } from './r-tab/r-tab.component';
-import { RTabHeaderDirective } from './r-tab-header.directive';
 
 @Component({
   selector: 'r-tabs',
@@ -11,8 +10,6 @@ export class RTabsComponent implements AfterContentInit {
 
   @ContentChildren(RTabComponent)
   tabs: QueryList<RTabComponent>;
-  @ViewChildren('rTabHeader')
-  headers: QueryList<HTMLElement>;
   rTabActiveLabelMarginLeft = 0;
   rTabActiveLabelWidth = 0;
   activeTab: RTabComponent;
@@ -21,7 +18,6 @@ export class RTabsComponent implements AfterContentInit {
 
   ngAfterContentInit(): void {
     this.checkActiveTab();
-    console.log(this.headers)
   }
 
   switchTab(tab: RTabComponent): void {
@@ -34,11 +30,6 @@ export class RTabsComponent implements AfterContentInit {
   private setActiveTab(tab: RTabComponent) {
     tab.active = true;
     this.activeTab = tab;
-    const index = this.tabs.toArray().findIndex(i => i === tab);
-    if (this.headers) {
-      this.rTabActiveLabelWidth = this.headers['_results'][index].nativeElement.getBoundingClientRect().width;
-    }
-    this.updateRTabActiveLabelMarginLeft();
   }
 
   private checkActiveTab(): void {
@@ -54,23 +45,6 @@ export class RTabsComponent implements AfterContentInit {
     if (!isAnyTabActive) {
       this.setActiveTab(this.tabs.first);
     }
-  }
-
-  private updateRTabActiveLabelMarginLeft(): void {
-    let retVal = 0;
-    for (let i = 0; i < this.tabs.length; i++) {
-      const tab: RTabComponent = this.tabs['_results'][i];
-      if (!tab) {
-        break;
-      } else if (tab && tab.active && i === 0) {
-        break;
-      } else if (tab.active) {
-        break;
-      } else {
-        retVal += this.headers['_results'][i].nativeElement.getBoundingClientRect().width;
-      }
-    }
-    this.rTabActiveLabelMarginLeft = retVal;
   }
 
 }

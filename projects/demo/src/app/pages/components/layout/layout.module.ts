@@ -6,6 +6,7 @@ import { LayoutComponent } from './layout.component';
 import { OverviewModule } from './overview/overview.module';
 import { CardModule } from './card/card.module';
 import { TabsModule } from './tabs/tabs.module';
+import { ExpansionPanelModule } from './expansion-panel/expansion-panel.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TabsModule } from './tabs/tabs.module';
     LayoutRoutingModule,
     OverviewModule,
     CardModule,
-    TabsModule
+    TabsModule,
+    ExpansionPanelModule
   ]
 })
 export class LayoutModule { }

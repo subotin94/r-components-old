@@ -1,1 +1,8 @@
-<p>r-expansion-panel works!</p>
+<r-card>
+  <r-card-header>
+    <ng-content select="r-expansion-panel-header"></ng-content>
+  </r-card-header>
+  <r-card-body [@expand]="{value: expanded ? 'expanded' : 'collapsed'}">
+    <ng-content select="r-expansion-panel-body"></ng-content>
+  </r-card-body>
+</r-card>
