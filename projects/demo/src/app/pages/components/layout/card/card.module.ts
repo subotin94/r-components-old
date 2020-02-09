@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from './card.component';
-import { RCardModule } from '../../../../../../../r-components/card';
+import { RCardModule } from 'projects/r-components/src/components/layout/r-card/card';
 
 @NgModule({
   declarations: [

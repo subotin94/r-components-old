@@ -1,0 +1,20 @@
+@import "../../../styles/r-theme.scss";
+
+:host {
+  display: block;
+  margin: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: r-theme(filled-basic-border-color);
+  // 0.5px border on both sides
+  border-top: 0.03125rem solid;
+  border-bottom: 0.03125rem solid;
+  &.vertical {
+    border: none;
+    height: 100%;
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0.03125rem solid;
+    border-right: 0.03125rem solid;
+  }
+}

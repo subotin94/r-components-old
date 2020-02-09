@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, HostBinding,  } from '@angular/core';
+
+export type RDividerDirection = 'horisontal' | 'vertical';
 
 @Component({
-  selector: 'lib-r-divider',
+  selector: 'r-divider',
   templateUrl: './r-divider.component.html',
   styleUrls: ['./r-divider.component.scss']
 })
-export class RDividerComponent implements OnInit {
+export class RDividerComponent {
 
-  constructor() { }
+  @Input() direction: RDividerDirection = 'horisontal';
 
-  ngOnInit() {
+  @HostBinding('class.vertical')
+  get isVertical(): boolean {
+    return this.direction === 'vertical';
   }
 
 }

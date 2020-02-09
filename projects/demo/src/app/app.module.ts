@@ -15,7 +15,6 @@ import { RSelectModule } from '../../../r-components/src/components/form-control
 import { RHintModule } from '../../../r-components/src/components/layout/r-hint/r-hint.module';
 import { RCheckboxModule } from '../../../r-components/src/components/form-controls/r-checkbox/r-checkbox.module';
 import { RLayoutModule } from '../../../r-components/src/components/layout/r-layout/r-layout.module';
-import { RCardModule } from '../../../r-components/card';
 import { RSidenavModule } from '../../../r-components/src/components/navigation/r-sidenav/r-sidenav.module';
 import { RNavbarModule } from 'projects/r-components/src/components/navigation/r-navbar/r-navbar.module';
 import { RLogoComponent } from './components/icons/r-logo.component';
@@ -23,6 +22,8 @@ import { DonateModule } from './pages/donate/donate.module';
 import { RErrorModule } from 'projects/r-components/src/components/form-controls/r-error/r-error.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RExpansionPanelModule } from 'projects/r-components/src/components/layout/r-expansion-panel/r-expansion-panel.module';
+import { RDividerModule } from 'projects/r-components/src/components/layout/r-divider/r-divider.module';
+import { RCardModule } from 'projects/r-components/src/components/layout/r-card/card';
 
 function getHighlightLanguages() {
   return {
@@ -49,6 +50,7 @@ function getHighlightLanguages() {
     RIconModule,
     RBrowserCardModule,
     RInputModule,
+    RDividerModule,
     RErrorModule,
     RToastModule.forRoot(),
     RSelectModule,

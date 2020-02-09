@@ -8,6 +8,7 @@ import { RDividerComponent } from './r-divider.component';
   declarations: [RDividerComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [RDividerComponent]
 })
 export class RDividerModule { }
