@@ -7,6 +7,7 @@ import { TabsComponent } from './tabs/tabs.component';
 import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
 import { ButtonComponent } from './button/button.component';
 import { ListComponent } from './list/list.component';
+import { DividerComponent } from './divider/divider.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
       {
         path: 'list',
         component: ListComponent
+      },
+      {
+        path: 'divider',
+        component: DividerComponent
       }
     ]
   }

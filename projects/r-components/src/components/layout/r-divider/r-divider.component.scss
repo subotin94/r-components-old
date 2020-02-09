@@ -1,0 +1,11 @@
+@import "../../../styles/r-theme.scss";
+
+:host {
+  //@include hint-theme();
+  color: r-theme(outline-color);
+  display: block;
+  margin: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: r-theme(filled-border)
+}

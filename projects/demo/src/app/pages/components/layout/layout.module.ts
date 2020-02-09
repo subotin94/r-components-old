@@ -9,6 +9,7 @@ import { TabsModule } from './tabs/tabs.module';
 import { ExpansionPanelModule } from './expansion-panel/expansion-panel.module';
 import { ButtonModule } from './button/button.module';
 import { ListModule } from './list/list.module';
+import { DividerModule } from './divider/divider.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ListModule } from './list/list.module';
     CardModule,
     TabsModule,
     ExpansionPanelModule,
-    ListModule
+    ListModule,
+    DividerModule,
   ]
 })
 export class LayoutModule { }

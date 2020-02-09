@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DividerComponent } from './divider.component';
+import { RDividerModule } from 'projects/r-components/src/components/layout/r-divider/r-divider.module';
 
 
 
 @NgModule({
-  declarations: [DividerComponent],
+  declarations: [
+    DividerComponent
+  ],
   imports: [
-    CommonModule
+    RDividerModule
+  ],
+  exports: [
+    DividerComponent
   ]
 })
 export class DividerModule { }

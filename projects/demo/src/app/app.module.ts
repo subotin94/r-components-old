@@ -23,6 +23,7 @@ import { DonateModule } from './pages/donate/donate.module';
 import { RErrorModule } from 'projects/r-components/src/components/form-controls/r-error/r-error.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RExpansionPanelModule } from 'projects/r-components/src/components/layout/r-expansion-panel/r-expansion-panel.module';
+import { RDividerModule } from 'projects/r-components/src/components/layout/r-divider/r-divider.module';
 
 function getHighlightLanguages() {
   return {
@@ -49,6 +50,7 @@ function getHighlightLanguages() {
     RIconModule,
     RBrowserCardModule,
     RInputModule,
+    RDividerModule,
     RErrorModule,
     RToastModule.forRoot(),
     RSelectModule,
