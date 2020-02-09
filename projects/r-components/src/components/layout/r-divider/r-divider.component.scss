@@ -2,10 +2,12 @@
 
 :host {
   //@include hint-theme();
-  color: r-theme(outline-color);
   display: block;
   margin: 0.5rem;
   margin-left: auto;
   margin-right: auto;
-  border: r-theme(filled-border)
+  color: r-theme(filled-basic-border-color);
+  // 0.5px border on both sides
+  border-top: 0.03125rem solid;
+  border-bottom: 0.03125rem solid;
 }
