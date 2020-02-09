@@ -1,6 +1,6 @@
 {
   "name": "@r-components/theme",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "peerDependencies": {
     "@angular/animations": "^8.0.0",
     "@angular/common": "^8.0.0",
