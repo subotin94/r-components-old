@@ -1,13 +1,30 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RDialogComponent } from './r-dialog.component';
-
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { RDialog } from './r-dialog.service';
 
 @NgModule({
-  declarations: [RDialogComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    MatDialogModule
+  ],
+  providers: [
+    RDialog
+  ],
+  exports: [
+    RDialog
   ]
 })
-export class RDialogModule { }
+/**
+ * @todo
+ * @subbre
+ * Add RialogConfig and pass it to mat dialog config
+ */
+export class RDialogModule {
+  static forRoot?(): ModuleWithProviders<RDialogModule> {
+    return {
+      ngModule: RDialogModule,
+      providers: [RDialog]
+    };
+  }
+}
