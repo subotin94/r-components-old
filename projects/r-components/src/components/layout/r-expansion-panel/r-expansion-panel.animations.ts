@@ -19,10 +19,10 @@ export const R_EXPANSION_PANEL_ANIMATIONS = [
       padding: '0 20px'
     })),
     transition('expanded => collapsed', [
-      animate('0.15s ease-in')
+      animate('0.15s ease-out')
     ]),
     transition('collapsed => expanded', [
-      animate('0.15s ease-out')
+      animate('0.15s ease-in')
     ])
   ])
 ];
