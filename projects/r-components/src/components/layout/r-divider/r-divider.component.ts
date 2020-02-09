@@ -1,5 +1,6 @@
 import { Component, Input, HostBinding,  } from '@angular/core';
-import { RDividerDirection } from '../../../core/types';
+
+export type RDividerDirection = 'horisontal' | 'vertical';
 
 @Component({
   selector: 'r-divider',
@@ -8,20 +9,11 @@ import { RDividerDirection } from '../../../core/types';
 })
 export class RDividerComponent {
 
-  // @Input()
-  // @HostBinding('vertical')
-  // get direction() {
-  //   return this.direction === 'vertical';
-  // }
+  @Input() direction: RDividerDirection = 'horisontal';
 
-  // @Input() direction: RDividerDirection;
-  // @HostBinding('direction-vertical')
-  // get _direction(): boolean {
-  //   return this.direction === 'vertical';
-  // }
-  // set _direction(value: boolean) {
-  //   if (value) {
-  //     this.direction = 'vertical';
-  //   }
-  // }
+  @HostBinding('class.vertical')
+  get isVertical(): boolean {
+    return this.direction === 'vertical';
+  }
+
 }
