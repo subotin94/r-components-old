@@ -8,6 +8,7 @@ import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.compo
 import { ButtonComponent } from './button/button.component';
 import { ListComponent } from './list/list.component';
 import { DividerComponent } from './divider/divider.component';
+import { AlertComponent } from './alert/alert.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
       {
         path: 'divider',
         component: DividerComponent
+      },
+      {
+        path: 'alert',
+        component: AlertComponent
       }
     ]
   }

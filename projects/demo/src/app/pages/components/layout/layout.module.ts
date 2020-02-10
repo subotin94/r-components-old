@@ -10,6 +10,7 @@ import { ExpansionPanelModule } from './expansion-panel/expansion-panel.module';
 import { ButtonModule } from './button/button.module';
 import { ListModule } from './list/list.module';
 import { DividerModule } from './divider/divider.module';
+import { AlertModule } from './alert/alert.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { DividerModule } from './divider/divider.module';
     ExpansionPanelModule,
     ListModule,
     DividerModule,
+    AlertModule
   ]
 })
 export class LayoutModule { }

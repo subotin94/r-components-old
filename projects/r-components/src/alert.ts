@@ -1,1 +1,1 @@
-export * from './src/components/layout/r-alert/alert';
+export * from './components/layout/r-alert/alert';
