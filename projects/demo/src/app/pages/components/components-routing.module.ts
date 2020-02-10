@@ -10,6 +10,10 @@ const routes: Routes = [
       {
         path: 'layout',
         loadChildren: () => import('./layout/layout.module').then(mod => mod.LayoutModule)
+      },
+      {
+        path: 'popups',
+        loadChildren: () => import('./popups/popups.module').then(mod => mod.PopupsModule)
       }
     ]
   }

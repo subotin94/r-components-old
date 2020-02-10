@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'demo-popups',
-  template: `
-    <p>
-      popups works!
-    </p>
-  `,
-  styles: []
+  template: '<router-outlet>',
+  styles: [`
+    :host {
+      display: block;
+    }
+  `]
 })
 export class PopupsComponent implements OnInit {
 
-  constructor() { }
+  constructor() { }2
 
   ngOnInit() {
   }
