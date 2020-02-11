@@ -12,11 +12,6 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class AppComponent {
 
-  /**
-   * @rError
-   */
-  requiredField = new FormControl(null, Validators.required);
-
   ngOnInit() {
     // console.log(this.sidenav);
     // this.sidenav.openedChange.subscribe(console.log);

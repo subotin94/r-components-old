@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'demo-components',
   template: `
     <router-outlet></router-outlet>
   `,
-  styles: []
+  styles: [`
+    :host {
+      display: block;
+    }
+  `]
 })
-export class ComponentsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class ComponentsComponent { }

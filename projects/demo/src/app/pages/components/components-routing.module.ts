@@ -12,6 +12,10 @@ const routes: Routes = [
         loadChildren: () => import('./layout/layout.module').then(mod => mod.LayoutModule)
       },
       {
+        path: 'form-controls',
+        loadChildren: () => import('./form-controls/form-controls.module').then(mod => mod.FormControlsModule)
+      },
+      {
         path: 'popups',
         loadChildren: () => import('./popups/popups.module').then(mod => mod.PopupsModule)
       }

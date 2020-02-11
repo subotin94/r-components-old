@@ -1,19 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'demo-form-controls',
-  template: `
-    <p>
-      form-controls works!
-    </p>
-  `,
-  styles: []
+  template: `<router-outlet></router-outlet>`,
+  styles: [`
+    :host {
+      display: block;
+    }
+  `]
 })
-export class FormControlsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class FormControlsComponent { }
