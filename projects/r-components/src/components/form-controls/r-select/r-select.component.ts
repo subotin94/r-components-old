@@ -118,10 +118,12 @@ export class RSelectComponent<T> implements RSubscriptionComponent, ControlValue
     if (((window.innerHeight - Number(String(clientRect.y).split('.')[0])) - 50) < SELECT_STYLE['max-height.px']) {
       return this.overlay
         .position()
+        // tslint:disable-next-line: deprecation
         .connectedTo(this.button, { originX: 'end', originY: 'top' }, { overlayX: 'end', overlayY: 'bottom' });
     } else {
       return this.overlay
         .position()
+        // tslint:disable-next-line: deprecation
         .connectedTo(this.button, { originX: 'start', originY: 'bottom' }, { overlayX: 'start', overlayY: 'top' });
     }
   }

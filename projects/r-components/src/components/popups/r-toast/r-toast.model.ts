@@ -1,7 +1,7 @@
 export interface  RTiastConfig {
   duration: number;
   hasIcon: boolean;
-  
+
 }
 
 export interface RToast {

@@ -99,30 +99,11 @@
             "browserTarget": "demo:build"
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/demo/src/test.ts",
-            "polyfills": "projects/demo/src/polyfills.ts",
-            "tsConfig": "projects/demo/tsconfig.spec.json",
-            "karmaConfig": "projects/demo/karma.conf.js",
-            "assets": [
-              "projects/demo/src/favicon.ico",
-              "projects/demo/src/assets"
-            ],
-            "styles": [
-              "projects/demo/src/styles.scss"
-            ],
-            "scripts": []
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/demo/tsconfig.app.json",
-              "projects/demo/tsconfig.spec.json",
-              "projects/demo/e2e/tsconfig.json"
+              "projects/demo/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -207,20 +188,11 @@
             }
           }
 },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/r-components/src/test.ts",
-            "tsConfig": "projects/r-components/tsconfig.spec.json",
-            "karmaConfig": "projects/r-components/karma.conf.js"
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/r-components/tsconfig.lib.json",
-              "projects/r-components/tsconfig.spec.json"
+              "projects/r-components/tsconfig.lib.json"
             ],
             "exclude": [
               "**/node_modules/**"
