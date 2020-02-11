@@ -3,4 +3,8 @@
 
 @mixin r-theme() {
   @include input-theme();
+    // r-navbar's z-index is 1002, we have to override cdk overlay wrappers
+  .cdk-overlay-pane, .cdk-overlay-container {
+    z-index: 1003 !important;
+  }
 }
