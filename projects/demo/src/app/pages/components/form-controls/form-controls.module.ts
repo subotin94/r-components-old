@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormControlsRoutingModule } from './form-controls-routing.module';
 import { FormControlsComponent } from './form-controls.component';
 import { InputModule } from './input/input.module';
+import { SelectModule } from './select/select.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { InputModule } from './input/input.module';
   imports: [
     CommonModule,
     FormControlsRoutingModule,
-    InputModule
+    InputModule,
+    SelectModule
   ]
 })
 export class FormControlsModule { }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormControlsComponent } from './form-controls.component';
 import { InputComponent } from './input/input.component';
+import { SelectComponent } from './select/select.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
       {
         path: 'input',
         component: InputComponent
+      },
+      {
+        path: 'select',
+        component: SelectComponent
       }
     ]
   }

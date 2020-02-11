@@ -45,13 +45,4 @@ export class AppComponent {
               private dialog: MatDialog) {
   }
 
-
-  /**
-   * @selectMenus
-   */
-  onSelectedChange($event) {
-    // console.log($event);
-  }
-
-
 }

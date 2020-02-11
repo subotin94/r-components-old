@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { MatSelectModule } from '@angular/material/select';
 
 import { RSelectComponent } from './r-select.component';
 import { RSelectLabelComponent } from './r-select-label/r-select-label.component';
@@ -22,7 +23,8 @@ const R_SELECT_COMPONENTS = [
     CommonModule,
     OverlayModule,
     PortalModule,
-    RButtonModule
+    RButtonModule,
+    MatSelectModule
   ],
   exports: R_SELECT_COMPONENTS
 })

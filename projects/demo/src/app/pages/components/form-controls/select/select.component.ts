@@ -12,4 +12,8 @@ export class SelectComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSelectedChange($event) {
+    console.log($event);
+  }
+
 }
