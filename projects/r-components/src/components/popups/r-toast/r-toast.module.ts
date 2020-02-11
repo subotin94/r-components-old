@@ -20,7 +20,7 @@ import { RToastContainerComponent } from './r-toast-container.component';
   ]
 })
 export class RToastModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<RToastModule> {
     return {
       ngModule: RToastModule,
       providers: [
