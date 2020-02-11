@@ -85,7 +85,7 @@ export class RCheckboxComponent implements ControlValueAccessor {
 
   constructor(private readonly cd: ChangeDetectorRef) { }
 
-  onChange: () => void = () => { };
+  onChange: (args?: any) => void = () => { };
   onTouched: () => void = () => { };
 
 
