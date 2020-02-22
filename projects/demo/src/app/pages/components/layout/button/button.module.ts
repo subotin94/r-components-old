@@ -4,7 +4,7 @@ import { ButtonComponent } from './button.component';
 import { HighlightModule } from 'ngx-highlightjs';
 import { RBrowserCardModule } from 'projects/r-components/src/components/extra/r-browser-card/browser-card';
 import { RHintModule } from 'projects/r-components/src/components/layout/r-hint/r-hint.module';
-import { RButtonModule } from 'projects/r-components/src/public-api';
+import { RButtonModule } from 'projects/r-components/src/components/layout/button';
 
 @NgModule({
   declarations: [

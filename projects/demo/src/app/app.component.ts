@@ -1,9 +1,7 @@
-import { Component, ViewChild, TemplateRef, ElementRef, Renderer2 } from '@angular/core';
-import { RToastService } from '../../../r-components/src/public-api';
+import { Component, ViewChild, TemplateRef, Renderer2 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { RSidenavComponent } from '../../../r-components/src/components/navigation/r-sidenav/r-sidenav.component';
 import { RNavbarComponent } from 'projects/r-components/src/components/navigation/r-navbar/r-navbar.component';
-import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'demo-root',
@@ -38,11 +36,9 @@ export class AppComponent {
   @ViewChild('dialogContent', {static: true})
   dialogContent: TemplateRef<HTMLElement>;
   openDialog() {
-    this.dialog.open(this.dialogContent);
+    // this.dialog.open(this.dialogContent);
   }
-  constructor(private readonly renderer: Renderer2,
-              private readonly toastService: RToastService,
-              private dialog: MatDialog) {
+  constructor(private readonly renderer: Renderer2) {
   }
 
 }

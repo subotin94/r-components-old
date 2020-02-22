@@ -8,7 +8,7 @@ import { RSelectLabelComponent } from './r-select-label/r-select-label.component
 import { ROptionComponent } from './r-option/r-option.component';
 import { ROptionGroupComponent } from './r-option-group/r-option-group.component';
 import { PortalModule } from '@angular/cdk/portal';
-import { RButtonModule } from '../../layout/r-button/button';
+import { RButtonModule } from '../../layout/button';
 
 const R_SELECT_COMPONENTS = [
   RSelectComponent,

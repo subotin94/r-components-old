@@ -2,7 +2,7 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/r-components",
   "lib": {
-    "entryFile": "src/public-api.ts",
+    "entryFile": "src/index.ts",
     "amdId": "@r-components",
     "umdId": "@r-components"
   }
