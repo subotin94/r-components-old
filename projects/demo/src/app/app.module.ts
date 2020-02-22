@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
+import { HighlightModule } from 'ngx-highlightjs';
 import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RButtonModule, RAlertModule } from '../../../r-components/src/public-api';
 import { RIconModule } from '../../../r-components/src/components/icons/r-icon/r-icon.module';
 import { RBrowserCardModule } from '../../../r-components/src/components/extra/r-browser-card/browser-card';
 import { RToastModule } from '../../../r-components/src/components/popups/r-toast/r-toast.module';
@@ -43,27 +42,9 @@ function getHighlightLanguages() {
     RLayoutModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HighlightModule,
-    ReactiveFormsModule,
-    RButtonModule,
-    RAlertModule,
-    RIconModule,
-    RBrowserCardModule,
-    RInputModule,
-    RDividerModule,
-    RErrorModule,
-    RToastModule.forRoot(),
-    RSelectModule,
-    RHintModule,
-    RCheckboxModule,
-    RExpansionPanelModule,
-    MatDialogModule,
-    RNavbarModule,
-    RCardModule,
     RSidenavModule,
     RNavbarModule,
-    DonateModule,
-    HighlightModule
+    RExpansionPanelModule
   ],
   // providers: [
   //   {

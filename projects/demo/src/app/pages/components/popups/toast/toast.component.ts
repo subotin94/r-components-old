@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RToastService } from '../../../../../../../r-components/src/public-api';
+import { RToastService } from 'projects/r-components/src/components/popups/r-toast/toast';
 
 @Component({
   selector: 'demo-toast',
