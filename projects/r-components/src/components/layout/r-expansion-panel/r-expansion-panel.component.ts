@@ -1,6 +1,8 @@
-import { Component, OnInit, Input, ContentChild } from '@angular/core';
+import { Component, Input, ContentChild } from '@angular/core';
 import { RExpansionPanelHeaderComponent } from './r-expansion-panel-header/r-expansion-panel-header.component';
 import { R_EXPANSION_PANEL_ANIMATIONS } from './r-expansion-panel.animations';
+import { RSubscriptionComponent } from '../../core/r-subscription-component.interface';
+import { SubSink } from 'subsink';
 
 @Component({
   selector: 'r-expansion-panel',
@@ -8,19 +10,20 @@ import { R_EXPANSION_PANEL_ANIMATIONS } from './r-expansion-panel.animations';
   styleUrls: ['./r-expansion-panel.component.scss'],
   animations: R_EXPANSION_PANEL_ANIMATIONS
 })
-export class RExpansionPanelComponent implements OnInit {
+export class RExpansionPanelComponent implements RSubscriptionComponent {
 
-  @Input() disableShadow = false;
-  @Input() fullWidth = false;
+  readonly subs = new SubSink();
+  @Input() disableShadow: boolean = false;
+  @Input() fullWidth: boolean = false;
   @Input() expanded: boolean = false;
   @ContentChild(RExpansionPanelHeaderComponent, { static: true })
   header: RExpansionPanelHeaderComponent;
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.header.expanded = this.expanded;
-    this.header.onClick.subscribe(() => this.toggle());
+    this.subs.add(this.header.onClick.subscribe(() => this.toggle()));
   }
 
   expand(): void {
@@ -44,6 +47,10 @@ export class RExpansionPanelComponent implements OnInit {
         this.expanded = true;
      }
      this.header.expanded = this.expanded;
+  }
+
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
   }
 
 }
