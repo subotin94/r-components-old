@@ -9,6 +9,6 @@ import { Component } from '@angular/core';
     </div>
     <ng-content></ng-content>
   `,
-  styleUrls: ['./r-card-header.component.scss']
+  styleUrls: ['./card-header.component.scss']
 })
 export class RCardHeaderComponent { }

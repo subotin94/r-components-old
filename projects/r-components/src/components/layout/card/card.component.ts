@@ -2,8 +2,8 @@ import { Component, OnInit, ElementRef, Input, HostBinding } from '@angular/core
 
 @Component({
   selector: 'r-card',
-  templateUrl: './r-card.component.html',
-  styleUrls: ['./r-card.component.scss']
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.scss']
 })
 export class RCardComponent implements OnInit {
 
