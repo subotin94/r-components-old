@@ -31,7 +31,7 @@ export class RExpansionPanelListComponent implements RSubscriptionComponent {
     });
   }
 
-  private resetPanelStates(panels): void {
+  private resetPanelStates(panels: RExpansionPanelComponent[]): void {
     panels.forEach((panel: RExpansionPanelComponent) => {
       panel.expanded = false;
       panel.header.expanded = false;
