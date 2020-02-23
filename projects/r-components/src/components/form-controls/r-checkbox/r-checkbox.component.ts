@@ -1,6 +1,6 @@
-import { Component, OnInit, forwardRef, Input, Output, EventEmitter, HostBinding, ChangeDetectorRef } from '@angular/core';
+import { Component, forwardRef, Input, Output, EventEmitter, HostBinding, ChangeDetectorRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-import { RComponentStatus } from '../../../core/types';
+import { RComponentStatus } from '../../core/types';
 
 @Component({
   selector: 'r-checkbox',

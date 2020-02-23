@@ -21,8 +21,8 @@ import { SubSink } from 'subsink';
 
 import { ROptionComponent } from './r-option/r-option.component';
 import { RSelectLabelComponent } from './r-select-label/r-select-label.component';
-import { RSubscriptionComponent } from '../../../core/r-subscription-component.interface';
 import { SELECT_STYLE } from './select.component.style';
+import { RSubscriptionComponent } from '../../core/r-subscription-component.interface';
 
 @Component({
   selector: 'r-select',

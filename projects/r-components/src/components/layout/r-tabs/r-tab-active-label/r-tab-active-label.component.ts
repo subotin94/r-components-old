@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input, HostBinding } from '@angular/core';
-import { RComponentStatus } from '../../../../core/types';
+import { RComponentStatus } from '../../../core/types';
 
 @Component({
   selector: 'r-tab-active-label',

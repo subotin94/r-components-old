@@ -13,7 +13,7 @@ import {
   RComponentStatus,
   RComponentShape,
   RComponentAppearance
-} from '../../../core/types';
+} from '../../core/types';
 
 @Component({
   selector: `

@@ -3,9 +3,9 @@ import { OverlayRef, Overlay, GlobalPositionStrategy } from '@angular/cdk/overla
 import { CdkPortal } from '@angular/cdk/portal';
 import { SubSink } from 'subsink';
 
-import { RSubscriptionComponent } from '../../../../core/r-subscription-component.interface';
 import { RSidenavContentComponent } from '../r-sidenav-content/r-sidenav-content.component';
 import { Subject } from 'rxjs';
+import { RSubscriptionComponent } from '../../../core/r-subscription-component.interface';
 
 let _portal = null;
 

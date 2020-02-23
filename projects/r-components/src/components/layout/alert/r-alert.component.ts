@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, HostBinding } from '@angular/core';
-import { RComponentStatus, RComponentAppearance } from '../../../core/types';
+import { RComponentStatus, RComponentAppearance } from '../../core/types';
 
 @Component({
   selector: 'r-alert',

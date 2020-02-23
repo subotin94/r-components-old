@@ -1,5 +1,5 @@
 import { Directive, HostBinding, Input } from '@angular/core';
-import { RComponentSize, RComponentStatus, RComponentShape } from '../../../core/types';
+import { RComponentSize, RComponentShape, RComponentStatus } from '../../core/types';
 
 @Directive({
   selector: 'input[r-input], textarea[r-input]'

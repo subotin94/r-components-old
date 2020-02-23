@@ -4,8 +4,8 @@ import { Subject } from 'rxjs';
 import { SubSink } from 'subsink';
 
 import { RSidenavMode } from './sidenav';
-import { RSubscriptionComponent } from '../../../core/r-subscription-component.interface';
 import { RSidenavContainerComponent } from './r-sidenav-container/r-sidenav-container.component';
+import { RSubscriptionComponent } from '../../core/r-subscription-component.interface';
 
 /**
  * @todo

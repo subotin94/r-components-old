@@ -1,5 +1,5 @@
 import { Component, HostBinding, Input } from '@angular/core';
-import { RComponentStatus } from '../../../core/types';
+import { RComponentStatus } from '../../core/types';
 
 @Component({
   selector: 'r-hint',
