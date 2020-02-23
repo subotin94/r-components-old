@@ -13,29 +13,28 @@ export class RExpansionPanelListComponent implements RSubscriptionComponent {
 
   @ContentChildren(RExpansionPanelComponent)
   private readonly panels: QueryList<RExpansionPanelComponent>;
-  private panelStates: boolean[] = [];
 
   ngAfterContentInit(): void {
+    this.subscribeOnExpandedChanges();
+  }
+
+  private subscribeOnExpandedChanges(): void {
     const panels = this.panels.toArray();
-    this.panelStates = panels.map(i => i.expanded);
-    panels.forEach((panel: RExpansionPanelComponent, index: number) => {
+    panels.forEach((panel: RExpansionPanelComponent) => {
       this.subs.add(panel.expandedChange.subscribe((expanded: boolean) => {
         if (expanded) {
-          this.resetPanelStates();
+          this.resetPanelStates(panels);
           panel.expanded = true;
           panel.header.expanded = true;
-          this.panelStates[index] = true;
         }
       }));
     });
   }
 
-  private resetPanelStates(): void {
-    const panels = this.panels.toArray();
-    panels.forEach((panel: RExpansionPanelComponent, index: number) => {
+  private resetPanelStates(panels): void {
+    panels.forEach((panel: RExpansionPanelComponent) => {
       panel.expanded = false;
       panel.header.expanded = false;
-      this.panelStates[index] = false;
     });
   }
 
