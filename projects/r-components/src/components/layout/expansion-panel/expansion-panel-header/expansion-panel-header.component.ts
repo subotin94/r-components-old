@@ -9,7 +9,7 @@ import { Component, HostListener, Output, EventEmitter } from '@angular/core';
   host: {
     'class': 'disable-text-selection'
   },
-  styleUrls: ['./r-expansion-panel-header.component.scss']
+  styleUrls: ['./expansion-panel-header.component.scss']
 })
 export class RExpansionPanelHeaderComponent {
 

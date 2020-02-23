@@ -1,7 +1,7 @@
 import { Component, ContentChildren, QueryList } from '@angular/core';
 import { RSubscriptionComponent } from '../../core/r-subscription-component.interface';
 import { SubSink } from 'subsink';
-import { RExpansionPanelComponent } from '../r-expansion-panel';
+import { RExpansionPanelComponent } from '../expansion-panel';
 
 @Component({
   selector: 'r-expansion-panel-list',

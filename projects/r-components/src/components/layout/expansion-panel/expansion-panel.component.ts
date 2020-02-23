@@ -1,13 +1,13 @@
 import { Component, Input, ContentChild, Output, EventEmitter } from '@angular/core';
-import { RExpansionPanelHeaderComponent } from './r-expansion-panel-header/r-expansion-panel-header.component';
-import { R_EXPANSION_PANEL_ANIMATIONS } from './r-expansion-panel.animations';
+import { RExpansionPanelHeaderComponent } from './expansion-panel-header/expansion-panel-header.component';
+import { R_EXPANSION_PANEL_ANIMATIONS } from './expansion-panel.animations';
 import { RSubscriptionComponent } from '../../core/r-subscription-component.interface';
 import { SubSink } from 'subsink';
 
 @Component({
   selector: 'r-expansion-panel',
-  templateUrl: './r-expansion-panel.component.html',
-  styleUrls: ['./r-expansion-panel.component.scss'],
+  templateUrl: './expansion-panel.component.html',
+  styleUrls: ['./expansion-panel.component.scss'],
   animations: R_EXPANSION_PANEL_ANIMATIONS
 })
 export class RExpansionPanelComponent implements RSubscriptionComponent {

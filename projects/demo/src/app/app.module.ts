@@ -8,7 +8,7 @@ import { RLayoutModule } from '../../../r-components/src/components/layout/r-lay
 import { RSidenavModule } from '../../../r-components/src/components/navigation/r-sidenav/r-sidenav.module';
 import { RNavbarModule } from 'projects/r-components/src/components/navigation/r-navbar/r-navbar.module';
 import { RLogoComponent } from './components/icons/r-logo.component';
-import { RExpansionPanelModule } from 'projects/r-components/src/components/layout/r-expansion-panel/r-expansion-panel.module';
+import { RExpansionPanelModule } from 'projects/r-components/src/components/layout/expansion-panel';
 import { RExpansionPanelListModule } from '../../../r-components/src/components/layout/expansion-panel-list';
 
 function getHighlightLanguages() {

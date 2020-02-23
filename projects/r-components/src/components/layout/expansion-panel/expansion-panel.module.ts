@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RExpansionPanelComponent } from './r-expansion-panel.component';
+import { RExpansionPanelComponent } from './expansion-panel.component';
 import { RIconModule } from '../../icons/r-icon/r-icon.module';
-import { RExpansionPanelHeaderComponent } from './r-expansion-panel-header/r-expansion-panel-header.component';
+import { RExpansionPanelHeaderComponent } from './expansion-panel-header/expansion-panel-header.component';
 import { RCardModule } from '../card';
-import { RExpansionPanelBodyComponent } from './r-expansion-panel-body/r-expansion-panel-body.component';
+import { RExpansionPanelBodyComponent } from './expansion-panel-body/expansion-panel-body.component';
 import { RButtonModule } from '../button';
 
 const R_EXPANSION_PANEL_COMPONENTS = [
