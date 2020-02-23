@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RExpansionPanelComponent } from './r-expansion-panel.component';
 import { RIconModule } from '../../icons/r-icon/r-icon.module';
 import { RExpansionPanelHeaderComponent } from './r-expansion-panel-header/r-expansion-panel-header.component';
-import { RCardModule } from '../r-card/card';
+import { RCardModule } from '../card';
 import { RExpansionPanelBodyComponent } from './r-expansion-panel-body/r-expansion-panel-body.component';
 import { RButtonModule } from '../button';
 

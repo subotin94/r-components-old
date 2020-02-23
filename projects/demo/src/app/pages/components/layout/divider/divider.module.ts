@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { DividerComponent } from './divider.component';
 import { RDividerModule } from 'projects/r-components/src/components/layout/r-divider/r-divider.module';
-import { RCardModule } from 'projects/r-components/src/components/layout/r-card/card';
+import { RCardModule } from 'projects/r-components/src/components/layout/card';
 
 @NgModule({
   declarations: [

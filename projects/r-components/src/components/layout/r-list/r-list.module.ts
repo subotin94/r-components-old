@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RListComponent } from './r-list.component';
 import { RListItemComponent } from './r-list-item/r-list-item.component';
 import { RListTitleComponent } from './r-list-title.component';
-import { RCardModule } from '../r-card/card';
+import { RCardModule } from '../card';
 
 const R_LIST_COMPONENTS = [
   RListComponent,

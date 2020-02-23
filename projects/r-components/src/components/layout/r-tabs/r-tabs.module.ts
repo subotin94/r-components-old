@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RTabsComponent } from './r-tabs.component';
 import { RTabComponent } from './r-tab/r-tab.component';
-import { RCardModule } from '../r-card/card';
 import { RTabActiveLabelComponent } from './r-tab-active-label/r-tab-active-label.component';
+import { RCardModule } from '../card';
 
 const R_TABS_COMPONENTS = [
   RTabsComponent,
