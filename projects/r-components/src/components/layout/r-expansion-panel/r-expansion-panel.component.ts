@@ -1,4 +1,4 @@
-import { Component, Input, ContentChild } from '@angular/core';
+import { Component, Input, ContentChild, Output, EventEmitter } from '@angular/core';
 import { RExpansionPanelHeaderComponent } from './r-expansion-panel-header/r-expansion-panel-header.component';
 import { R_EXPANSION_PANEL_ANIMATIONS } from './r-expansion-panel.animations';
 import { RSubscriptionComponent } from '../../core/r-subscription-component.interface';
@@ -16,6 +16,7 @@ export class RExpansionPanelComponent implements RSubscriptionComponent {
   @Input() disableShadow: boolean = false;
   @Input() fullWidth: boolean = false;
   @Input() expanded: boolean = false;
+  @Output() expandedChange = new EventEmitter<boolean>();
   @ContentChild(RExpansionPanelHeaderComponent, { static: true })
   header: RExpansionPanelHeaderComponent;
 
@@ -47,6 +48,7 @@ export class RExpansionPanelComponent implements RSubscriptionComponent {
         this.expanded = true;
      }
      this.header.expanded = this.expanded;
+     this.expandedChange.next(this.expanded);
   }
 
   ngOnDestroy(): void {
