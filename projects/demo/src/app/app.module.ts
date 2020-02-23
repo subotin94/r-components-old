@@ -1,28 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { HighlightModule } from 'ngx-highlightjs';
-import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RIconModule } from '../../../r-components/src/components/icons/r-icon/r-icon.module';
-import { RBrowserCardModule } from '../../../r-components/src/components/extra/r-browser-card/browser-card';
-import { RToastModule } from '../../../r-components/src/components/popups/r-toast/r-toast.module';
-import { RInputModule } from '../../../r-components/src/components/form-controls/r-input/r-input.module';
-import { RSelectModule } from '../../../r-components/src/components/form-controls/r-select/r-select.module';
-import { RHintModule } from '../../../r-components/src/components/layout/r-hint/r-hint.module';
-import { RCheckboxModule } from '../../../r-components/src/components/form-controls/r-checkbox/r-checkbox.module';
 import { RLayoutModule } from '../../../r-components/src/components/layout/r-layout/r-layout.module';
 import { RSidenavModule } from '../../../r-components/src/components/navigation/r-sidenav/r-sidenav.module';
 import { RNavbarModule } from 'projects/r-components/src/components/navigation/r-navbar/r-navbar.module';
 import { RLogoComponent } from './components/icons/r-logo.component';
-import { DonateModule } from './pages/donate/donate.module';
-import { RErrorModule } from 'projects/r-components/src/components/form-controls/r-error/r-error.module';
-import { ReactiveFormsModule } from '@angular/forms';
 import { RExpansionPanelModule } from 'projects/r-components/src/components/layout/r-expansion-panel/r-expansion-panel.module';
-import { RDividerModule } from 'projects/r-components/src/components/layout/r-divider/r-divider.module';
-import { RCardModule } from 'projects/r-components/src/components/layout/r-card/card';
+import { RExpansionPanelListModule } from '../../../r-components/src/components/layout/expansion-panel-list';
 
 function getHighlightLanguages() {
   return {
@@ -44,7 +31,8 @@ function getHighlightLanguages() {
     AppRoutingModule,
     RSidenavModule,
     RNavbarModule,
-    RExpansionPanelModule
+    RExpansionPanelModule,
+    RExpansionPanelListModule
   ],
   // providers: [
   //   {

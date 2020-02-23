@@ -2,49 +2,51 @@
   <r-sidenav-container>
     <!-- drawer component -->
     <r-sidenav [opened]="!isMobile" [mode]="isMobile ? 'over' : 'push'">
-      <r-expansion-panel [fullWidth]="true" [disableShadow]="true">
-        <r-expansion-panel-header>
-          <h4>Layout</h4>
-        </r-expansion-panel-header>
-        <r-expansion-panel-body>
-          <!-- br is just a temporary solution until we implement r-list -->
-          <a routerLink="/components/layout/overview">Overview</a>
-          <br>
-          <a routerLink="/components/layout/card">Card</a>
-          <br>
-          <a routerLink="/components/layout/tabs">Tabs</a>
-          <br>
-          <a routerLink="/components/layout/button">Button</a>
-          <br>
-          <a routerLink="/components/layout/expansion-panel">Expansion panel</a>
-          <br>
-          <a routerLink="/components/layout/list">List</a>
-          <br>
-          <a routerLink="/components/layout/divider">Divider</a>
-          <br>
-          <a routerLink="/components/layout/alert">Alert</a>
-        </r-expansion-panel-body>
-      </r-expansion-panel>
-      <r-expansion-panel [fullWidth]="true" [disableShadow]="true">
-        <r-expansion-panel-header>
-          <h4>Form Controls</h4>
-        </r-expansion-panel-header>
-        <r-expansion-panel-body>
-          <a routerLink="/components/form-controls/input">Input</a>
-          <br>
-          <!-- <a routerLink="/components/form-controls/select">Select</a> -->
-        </r-expansion-panel-body>
-      </r-expansion-panel>
-      <r-expansion-panel [fullWidth]="true" [disableShadow]="true">
-        <r-expansion-panel-header>
-          <h4>Popups</h4>
-        </r-expansion-panel-header>
-        <r-expansion-panel-body>
-          <a routerLink="/components/popups/toast">Toast</a>
-          <br>
-          <a routerLink="/components/popups/dialog">Dialog</a>
-        </r-expansion-panel-body>
-      </r-expansion-panel>
+      <r-expansion-panel-list>
+        <r-expansion-panel [fullWidth]="true" [disableShadow]="true">
+          <r-expansion-panel-header>
+            <h4>Layout</h4>
+          </r-expansion-panel-header>
+          <r-expansion-panel-body>
+            <!-- br is just a temporary solution until we implement r-list -->
+            <a routerLink="/components/layout/overview">Overview</a>
+            <br>
+            <a routerLink="/components/layout/card">Card</a>
+            <br>
+            <a routerLink="/components/layout/tabs">Tabs</a>
+            <br>
+            <a routerLink="/components/layout/button">Button</a>
+            <br>
+            <a routerLink="/components/layout/expansion-panel">Expansion panel</a>
+            <br>
+            <a routerLink="/components/layout/list">List</a>
+            <br>
+            <a routerLink="/components/layout/divider">Divider</a>
+            <br>
+            <a routerLink="/components/layout/alert">Alert</a>
+          </r-expansion-panel-body>
+        </r-expansion-panel>
+        <r-expansion-panel [fullWidth]="true" [disableShadow]="true">
+          <r-expansion-panel-header>
+            <h4>Form Controls</h4>
+          </r-expansion-panel-header>
+          <r-expansion-panel-body>
+            <a routerLink="/components/form-controls/input">Input</a>
+            <br>
+            <!-- <a routerLink="/components/form-controls/select">Select</a> -->
+          </r-expansion-panel-body>
+        </r-expansion-panel>
+        <r-expansion-panel [fullWidth]="true" [disableShadow]="true">
+          <r-expansion-panel-header>
+            <h4>Popups</h4>
+          </r-expansion-panel-header>
+          <r-expansion-panel-body>
+            <a routerLink="/components/popups/toast">Toast</a>
+            <br>
+            <a routerLink="/components/popups/dialog">Dialog</a>
+          </r-expansion-panel-body>
+        </r-expansion-panel>
+      </r-expansion-panel-list>
     </r-sidenav>
 
     <!-- content component -->
@@ -54,8 +56,8 @@
         <r-logo width="49" height="45"></r-logo>
         <div class="links">
           <!-- <a routerLink="/donate">Donate</a> -->
-          <iframe #github src="https://ghbtns.com/github-btn.html?user=subotin94&repo=r-components&type=star&count=true" frameborder="0"
-          scrolling="0" width="106px" height="20px"></iframe>
+          <iframe #github src="https://ghbtns.com/github-btn.html?user=subotin94&repo=r-components&type=star&count=true"
+            frameborder="0" scrolling="0" width="106px" height="20px"></iframe>
         </div>
       </r-navbar>
       <!-- everything under navbar is just regular content -->

@@ -12,7 +12,6 @@ export class RIconComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('here');
   }
 
 }
