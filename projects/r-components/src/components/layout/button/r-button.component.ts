@@ -32,8 +32,7 @@ import {
 export class RButtonComponent implements OnInit {
 
   @Input() size: RComponentSize = 'medium';
-  @Input()
-  status: RComponentStatus = 'primary';
+  @Input() status: RComponentStatus = 'primary';
   @Input() shape: RComponentShape = 'rectangle';
   @Input() appearance: RComponentAppearance = 'filled';
   icon: string;
