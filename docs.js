@@ -11,6 +11,7 @@ const processFile = path => {
 
     docsMetadata.push({
       componentId: getClassName(file),
+      location: getLocation(path),
       inputs: getInputParams(file),
       outputs: getOutputParams(file)
     });
@@ -24,6 +25,16 @@ glob('./projects/r-components/src/**/*.ts', (err, files) => {
   console.log(docsMetadata);
 
 });
+
+/**
+ * Extract location
+ * location is path of a component, core, data, layout,...
+ * @param path
+ */
+const getLocation = (path) => {
+  const data = path.split('/');
+  return (data && data.length > 0) ? data[5] : '';
+};
 
 /**
  * Extract class name from a file
