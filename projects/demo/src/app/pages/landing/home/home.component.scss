@@ -1,0 +1,35 @@
+:host {
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+  align-items: center;
+  position: relative;
+  padding-bottom: 100px;
+  box-sizing: border-box;
+  height: calc(100vh - 77px);
+  h1 {
+    font-size: 70px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  .scroll-block {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 25px;
+    @keyframes scroll {
+      0% {
+        transform: translateY(0);
+      }
+      30% {
+        transform: translateY(60px);
+      }
+    }
+    
+    svg #wheel {
+      animation: scroll ease 2s infinite;
+    }
+  }
+}

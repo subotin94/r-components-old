@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'demo-components',
-  template: `
-    <router-outlet></router-outlet>
-  `,
+  templateUrl: './components.component.html',
   styles: [`
     :host {
       display: block;

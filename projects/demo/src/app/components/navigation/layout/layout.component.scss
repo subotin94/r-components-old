@@ -1,0 +1,27 @@
+:host {
+  display: block;
+  background-color: #edf1f7;
+  color: #222b45;
+
+  r-navbar {
+    justify-content: space-between;
+    .links {
+      display: flex;
+      align-items: center;
+      * {
+        &:not(:last-child) {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+
+  r-sidenav-content {
+    padding: 34px;
+  }
+
+  .inputs {
+    background-color: white;
+    padding: 20px 0;
+  }
+}

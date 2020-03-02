@@ -18,6 +18,16 @@ const routes: Routes = [
   {
     path: 'donate',
     component: DonateComponent
+  },
+  {
+    path: '',
+    redirectTo: '/landing/home',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: '/landing/home',
+    pathMatch: 'full'
   }
 ];
 

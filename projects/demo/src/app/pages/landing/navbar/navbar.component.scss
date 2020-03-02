@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  width: 100%;
+  box-shadow: 0px 8px 16px rgba(#1A1F33, 0.2);
+  ul {
+    padding-right: 40px;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    list-style: none;
+    justify-content: space-between;
+    div {
+      display: flex;
+      li {
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+        a {
+          color: white;
+          cursor: pointer;
+        }
+      }
+    }
+
+  }
+}

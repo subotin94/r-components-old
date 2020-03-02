@@ -1,0 +1,63 @@
+:host {
+  display: block;
+  color: white;
+  height: 100vh;
+  overflow: auto;
+  background: no-repeat #ff3f71;
+  background-image: -webkit-linear-gradient(
+    330deg,
+    #ff3c6d,
+    #ffa76d,
+    #ff73bb,
+    #6caafd,
+    #1fe4d4
+  );
+  background-image: -o-linear-gradient(
+    330deg,
+    #ff3c6d,
+    #ffa76d,
+    #ff73bb,
+    #6caafd,
+    #1fe4d4
+  );
+  background-image: linear-gradient(
+    120deg,
+    #ff3c6d,
+    #ffa76d,
+    #ff73bb,
+    #6caafd,
+    #1fe4d4
+  );
+  -webkit-background-size: 800% 400%;
+  background-size: 800% 400%;
+  -webkit-animation-name: introAnimation;
+  animation-name: introAnimation;
+  -webkit-animation-duration: 30s;
+  animation-duration: 30s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-delay: 0;
+  animation-delay: 0;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes introAnimation {
+  0%,
+  100% {
+      background-position: 0 50%
+  }
+  50% {
+      background-position: 100% 50%
+  }
+}
+
+@keyframes introAnimation {
+  0%,
+  100% {
+      background-position: 0 50%
+  }
+  50% {
+      background-position: 100% 50%
+  }
+}

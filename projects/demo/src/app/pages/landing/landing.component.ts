@@ -3,11 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'demo-landing',
   template: `
-    <p>
-      landing works!
-    </p>
+    <demo-navbar></demo-navbar>
+    <router-outlet></router-outlet>
   `,
-  styles: []
+  styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
 

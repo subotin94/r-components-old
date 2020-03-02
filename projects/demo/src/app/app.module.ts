@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { RLayoutModule } from '../../../r-components/src/components/layout/r-layout/r-layout.module';
 import { RSidenavModule } from '../../../r-components/src/components/navigation/r-sidenav/r-sidenav.module';
 import { RNavbarModule } from 'projects/r-components/src/components/navigation/r-navbar/r-navbar.module';
-import { RLogoComponent } from './components/icons/r-logo.component';
 import { RExpansionPanelModule } from 'projects/r-components/src/components/layout/expansion-panel';
 import { RExpansionPanelListModule } from '../../../r-components/src/components/layout/expansion-panel-list';
 
@@ -21,8 +20,7 @@ function getHighlightLanguages() {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    RLogoComponent
+    AppComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
