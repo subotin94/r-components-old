@@ -55,7 +55,7 @@
     "@angular/router": "~9.0.0",
     "@nguniversal/express-engine": "^9.0.0",
     "codelyzer": "^5.2.1",
-    "express": "^4.15.2",
+    "express": "^4.17.3",
     "ngx-highlightjs": "^4.0.2",
     "rxjs": "~6.5.4",
     "subsink": "^1.0.1",
